@@ -90,17 +90,8 @@ export default function Form(props) {
 
   return (
     <motion.div style={{ display: "flex", flexDirection: "column" }}>
-      <h1>
-        <h1
-          style={{
-            color: "#FECF44",
-            display: "inline-block",
-            fontSize: "40px",
-          }}
-        >
-          1.
-        </h1>{" "}
-        Build your Loader
+      <h1 className="headerblank">
+        <h1 className="headerone">1.</h1> Build your Loader
       </h1>
       <motion.div
         className="editor"
@@ -468,22 +459,15 @@ export default function Form(props) {
         </form>
       </motion.div>
       <h1
+        className="headerblank"
         style={{
           marginTop: "4rem",
         }}
       >
-        <h1
-          style={{
-            color: "#FA9477",
-            display: "inline-block",
-            fontSize: "40px",
-          }}
-        >
-          2.
-        </h1>{" "}
-        Install Framer Motion
+        <h1 className="headertwo">2.</h1> Install Framer Motion
       </h1>
       <motion.div
+        className="wrap-installation"
         style={{
           justifyContent: "center",
           alignItems: "center",
@@ -526,11 +510,12 @@ export default function Form(props) {
 
       <h1>
         <h1
-          style={{
-            color: "#F45B99",
-            display: "inline-block",
-            fontSize: "40px",
-          }}
+          className="headerthree"
+          // style={{
+          //   color: "#F45B99",
+          //   display: "inline-block",
+          //   fontSize: "40px",
+          // }}
         >
           3.
         </h1>{" "}
