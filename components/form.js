@@ -24,7 +24,7 @@ export default function Form(props) {
   const [widthFocus, setWidthFocus] = React.useState(false);
   // Set opacity ↓
   const [opacity, setOpacity] = React.useState(1);
-  const [opactiyFocus, setOpacityFocus] = React.useState(false);
+  const [opacityFocus, setOpacityFocus] = React.useState(false);
   // Set height ↓
   const [height, setHeight] = React.useState(10);
   const [heightFocus, setHeightFocus] = React.useState(false);
@@ -91,7 +91,7 @@ export default function Form(props) {
   return (
     <motion.div style={{ display: "flex", flexDirection: "column" }}>
       <h1 className="headerblank">
-        <h1 className="headerone">1.</h1> Build your Loader
+        <span className="headerone">1.</span> Build your Loader
       </h1>
       <motion.div
         className="editor"
@@ -117,11 +117,11 @@ export default function Form(props) {
           </div>
         }
 
-        <form autocomplete="off">
+        <form autoComplete="off">
           <div className="form-style">
             <h2>Styling</h2>
             <div className="wrap-labelinput">
-              <label for="quantity">
+              <label htmlFor="quantity">
                 Quantity
                 <motion.p
                   className="sublabel"
@@ -197,7 +197,7 @@ export default function Form(props) {
                   className="sublabel"
                   variants={pVariants}
                   value={opacity}
-                  animate={opactiyFocus ? "show" : "hide"}
+                  animate={opacityFocus ? "show" : "hide"}
                   initial={"hide"}
                   transition={{ duration: "0.3" }}
                 >
@@ -464,7 +464,7 @@ export default function Form(props) {
           marginTop: "4rem",
         }}
       >
-        <h1 className="headertwo">2.</h1> Install Framer Motion
+        <span className="headertwo">2.</span> Install Framer Motion
       </h1>
       <motion.div
         className="wrap-installation"
@@ -509,7 +509,7 @@ export default function Form(props) {
       </motion.div>
 
       <h1>
-        <h1
+        <span
           className="headerthree"
           // style={{
           //   color: "#F45B99",
@@ -518,7 +518,7 @@ export default function Form(props) {
           // }}
         >
           3.
-        </h1>{" "}
+        </span>{" "}
         Copy your code
       </h1>
       <motion.div className="snippet">
