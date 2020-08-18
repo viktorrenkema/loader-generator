@@ -509,17 +509,7 @@ export default function Form(props) {
       </motion.div>
 
       <h1>
-        <span
-          className="headerthree"
-          // style={{
-          //   color: "#F45B99",
-          //   display: "inline-block",
-          //   fontSize: "40px",
-          // }}
-        >
-          3.
-        </span>{" "}
-        Copy your code
+        <span className="headerthree">3.</span> Copy your code
       </h1>
       <motion.div className="snippet">
         <CodeBlock
