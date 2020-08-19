@@ -4,7 +4,26 @@ import Form from "../components/form";
 
 import MoreInfo from "../components/moreinfo";
 
+let svg;
+let newEl;
+
 export default function Home(props) {
+  // React.useEffect(() => {
+  //   svg = document.querySelector(
+  //     "#__next > div > main > div > div > div.wrap-installation > div:nth-child(5) > div > button > svg"
+  //   );
+  //   console.log(
+  //     document.querySelector(
+  //       "#__next > div > main > div > div > div.wrap-installation > div:nth-child(5) > div > button > svg"
+  //     )
+  //   );
+
+  //   newEl = document.createElement("span");
+
+  //   newEl.innerHTML = "COPY";
+  //   svg.parentNode.replaceChild(newEl, svg);
+  // }, []);
+
   const [tab, setCurrentTab] = React.useState(1);
 
   console.log(tab);

@@ -91,7 +91,7 @@ export default function Form(props) {
   return (
     <motion.div style={{ display: "flex", flexDirection: "column" }}>
       <h1 className="headerblank">
-        <span className="headerone">1.</span> Build your Loader
+        <span className="headerone">1.</span> Build
       </h1>
       <motion.div
         className="editor"
@@ -329,7 +329,7 @@ export default function Form(props) {
               >
                 {color ? (
                   <p className="hex-text" style={{ color: uppercolor }}>
-                    {color}
+                    {color.toUpperCase()}
                   </p>
                 ) : (
                   <p className="hex-text" style={{ color: "#747474" }}>
@@ -458,24 +458,10 @@ export default function Form(props) {
           </div>
         </form>
       </motion.div>
-      <h1
-        className="headerblank"
-        style={{
-          marginTop: "4rem",
-        }}
-      >
+      <h1 className="headerblank">
         <span className="headertwo">2.</span> Install Framer Motion
       </h1>
-      <motion.div
-        className="wrap-installation"
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "2rem",
-          border: "2px solid #312e3a",
-          background: "#1d1a23",
-        }}
-      >
+      <motion.div className="wrap-installation">
         <p>
           Your Loader runs on{" "}
           <a href="https://www.framer.com/motion/" target="_blank">
@@ -508,7 +494,7 @@ export default function Form(props) {
         </div>
       </motion.div>
 
-      <h1>
+      <h1 className="headerblank">
         <span className="headerthree">3.</span> Copy your code
       </h1>
       <motion.div className="snippet">
