@@ -1,11 +1,15 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import CodeBlock from "../components/codeblock";
+import Checkbox from "../components/checkbox";
 
 import { SketchPicker, BlockPicker } from "react-color";
 
 export default function Form(props) {
   // Trigger refresh of render when form is updated ↓
+
+  const [checked, setChecked] = React.useState(false);
+  console.log(checked);
 
   const [render, startRender] = React.useState(true);
 
@@ -33,7 +37,7 @@ export default function Form(props) {
   const [colorFocus, setColorFocus] = React.useState(false);
   const [colorPickerOpen, setColorPickerOpen] = React.useState(false);
   // Set rotation ↓
-  const [rotation, setRotation] = React.useState(180);
+  const [rotation, setRotation] = React.useState(360);
   const [rotationFocus, setRotationFocus] = React.useState(false);
   // Set scale ↓
   const [scaleMin, setScaleMin] = React.useState(0);
@@ -49,6 +53,10 @@ export default function Form(props) {
   // Set ease ↓
   const [ease, setEase] = React.useState("linear");
   console.log(color.toUpperCase());
+
+  function handleClick(cb) {
+    display("Clicked, new value = " + cb);
+  }
 
   let uppercolor = color.toUpperCase();
   // Add # of dots to array to render ↓
@@ -348,7 +356,14 @@ export default function Form(props) {
                   </motion.div>
                 )}
               </div>
-
+            </div>
+            <div className="wrap-labelinput">
+              {" "}
+              <Checkbox
+                label={"circular"}
+                onChange={setChecked}
+                checked={checked}
+              ></Checkbox>
               {/* <input
               type="color"
               id="color"
@@ -533,6 +548,17 @@ export function Dot(props) {
     },
   };
 
+  const rotatevariants = {
+    start: {
+      rotate: 0,
+      // perspective: 0
+    },
+    end: {
+      rotate: 360,
+      // perspective:600,
+    },
+  };
+
   const transition = {
     yoyo: Infinity,
     // flip: Infinity,
@@ -544,11 +570,19 @@ export function Dot(props) {
 
   return (
     <motion.div
-      variants={variants}
-      animate={"show"}
-      initial={"hide"}
+      style={{ width: props.circular ? "50px" : "0px" }}
+      animate={"end"}
+      initial={"start"}
+      variants={rotatevariants}
       transition={transition}
-      style={dot}
-    ></motion.div>
+    >
+      <motion.div
+        variants={variants}
+        animate={"show"}
+        initial={"hide"}
+        transition={transition}
+        style={dot}
+      ></motion.div>
+    </motion.div>
   );
 }
