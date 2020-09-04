@@ -2,63 +2,32 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import CodeBlock from "../components/codeblock";
 import Checkbox from "../components/checkbox";
-
-import { SketchPicker, BlockPicker } from "react-color";
+import NumberInput from "../components/numberinput";
+import ColorInput from "../components/colorinput";
 
 export default function Form(props) {
-  // Trigger refresh of render when form is updated ↓
-
-  const [checked, setChecked] = React.useState(false);
-  console.log(checked);
-
   const [render, startRender] = React.useState(true);
 
-  // Number of dots shown ↓
   const [quantity, setQuantity] = React.useState(5);
-  const [quantityFocus, setQuantityFocus] = React.useState(false);
-
-  // Set radius ↓
   const [radius, setRadius] = React.useState(0);
-  const [radiusFocus, setRadiusFocus] = React.useState(false);
-  // Set margin ↓
   const [margin, setMargin] = React.useState(5);
-  const [marginFocus, setMarginFocus] = React.useState(false);
-  // Set width ↓
   const [width, setWidth] = React.useState(10);
-  const [widthFocus, setWidthFocus] = React.useState(false);
-  // Set opacity ↓
   const [opacity, setOpacity] = React.useState(1);
-  const [opacityFocus, setOpacityFocus] = React.useState(false);
-  // Set height ↓
   const [height, setHeight] = React.useState(10);
-  const [heightFocus, setHeightFocus] = React.useState(false);
-  // Set color ↓
-  const [color, setColor] = React.useState("#fecf44");
-  const [colorFocus, setColorFocus] = React.useState(false);
-  const [colorPickerOpen, setColorPickerOpen] = React.useState(false);
-  // Set rotation ↓
   const [rotation, setRotation] = React.useState(360);
-  const [rotationFocus, setRotationFocus] = React.useState(false);
-  // Set scale ↓
   const [scaleMin, setScaleMin] = React.useState(0);
-  const [scaleMinFocus, setScaleMinFocus] = React.useState(false);
   const [scaleMax, setScaleMax] = React.useState(1);
-  const [scaleMaxFocus, setScaleMaxFocus] = React.useState(false);
-
-  // Set duration ↓
+  const [color, setColor] = React.useState("#fecf44");
   const [duration, setDuration] = React.useState(1);
-  // Set delay ↓
   const [delay, setDelay] = React.useState(0.1);
-  const [delayFocus, setDelayFocus] = React.useState(undefined);
-  // Set ease ↓
   const [ease, setEase] = React.useState("linear");
-  console.log(color.toUpperCase());
+  const [checked, setChecked] = React.useState(false);
 
+  console.log(margin, scaleMin, scaleMax);
   function handleClick(cb) {
     display("Clicked, new value = " + cb);
   }
 
-  let uppercolor = color.toUpperCase();
   // Add # of dots to array to render ↓
   let renderdots = [];
   let snippetelements = "";
@@ -128,309 +97,80 @@ export default function Form(props) {
         <form autoComplete="off">
           <div className="form-style">
             <h2>Styling</h2>
-            <div className="wrap-labelinput">
-              <label htmlFor="quantity">
-                Quantity
-                <motion.p
-                  className="sublabel"
-                  variants={pVariants}
-                  animate={quantityFocus ? "show" : "hide"}
-                  initial={"hide"}
-                  transition={{ duration: "0.3" }}
-                >
-                  Number of dots
-                </motion.p>
-              </label>
-              <input
-                type="number"
-                id="quantity"
-                name="quantity"
-                placeholder="0"
-                value={quantity}
-                onFocus={() => setQuantityFocus(true)}
-                onBlur={() => setQuantityFocus(false)}
-                onChange={(e) => setQuantity(e.target.value)}
-              />
-            </div>
-            <div className="wrap-labelinput">
-              <label for="quantity">
-                Radius{" "}
-                <motion.p
-                  className="sublabel"
-                  variants={pVariants}
-                  animate={radiusFocus ? "show" : "hide"}
-                  initial={"hide"}
-                  transition={{ duration: "0.3" }}
-                >
-                  Sets rounding of corners
-                </motion.p>
-              </label>
-              <input
-                type="number"
-                value={radius}
-                id="radius"
-                name="radius"
-                placeholder="0"
-                onFocus={() => setRadiusFocus(true)}
-                onBlur={() => setRadiusFocus(false)}
-                onChange={(e) => setRadius(e.target.value)}
-              />
-            </div>
-            <div className="wrap-labelinput">
-              <label for="width">Width </label>
-              <input
-                placeholder="10"
-                value={width}
-                type="number"
-                id="width"
-                name="width"
-                onChange={(e) => setWidth(e.target.value)}
-              />
-            </div>
-            <div className="wrap-labelinput">
-              <label for="height">Height</label>
-              <input
-                type="number"
-                placeholder="10"
-                value={height}
-                id="height"
-                name="height"
-                onChange={(e) => setHeight(e.target.value)}
-              />
-            </div>
-            <div className="wrap-labelinput">
-              <label for="opacity">
-                Opacity
-                <motion.p
-                  className="sublabel"
-                  variants={pVariants}
-                  value={opacity}
-                  animate={opacityFocus ? "show" : "hide"}
-                  initial={"hide"}
-                  transition={{ duration: "0.3" }}
-                >
-                  Sets transparancy
-                </motion.p>
-              </label>
-              <input
-                placeholder="1"
-                type="number"
-                value={opacity}
-                id="opacity"
-                name="opacity"
-                onFocus={() => setOpacityFocus(true)}
-                onBlur={() => setOpacityFocus(false)}
-                onChange={(e) => setOpacity(e.target.value)}
-              />
-            </div>
-            <div className="wrap-labelinput">
-              <label for="scalemin">
-                Scale Start{" "}
-                <motion.p
-                  className="sublabel"
-                  variants={pVariants}
-                  animate={scaleMinFocus ? "show" : "hide"}
-                  initial={"hide"}
-                  transition={{ duration: "0.3" }}
-                >
-                  Scale value at start
-                </motion.p>
-              </label>
-              <input
-                placeholder="0"
-                type="number"
-                value={scaleMin}
-                id="scalemin"
-                name="scalemin"
-                onFocus={() => {
-                  setScaleMinFocus(true), startRender(false);
-                }}
-                onBlur={() => {
-                  setScaleMinFocus(false), startRender(true);
-                }}
-                onChange={(e) => setScaleMin(e.target.value)}
-                onKeyPress={(event) => {
-                  event.key === "Enter"
-                    ? document.getElementById("scalemin").blur()
-                    : undefined;
-                }}
-              />
-            </div>
-            <div className="wrap-labelinput">
-              <label for="quantity">
-                Scale End{" "}
-                <motion.p
-                  className="sublabel"
-                  variants={pVariants}
-                  animate={scaleMaxFocus ? "show" : "hide"}
-                  initial={"hide"}
-                  transition={{ duration: "0.3" }}
-                >
-                  Scale value at end
-                </motion.p>
-              </label>
-              <input
-                placeholder="1"
-                type="number"
-                id="scalemax"
-                value={scaleMax}
-                name="scalemax"
-                onFocus={() => {
-                  setScaleMaxFocus(true), startRender(false);
-                }}
-                onBlur={() => {
-                  setScaleMaxFocus(false), startRender(true);
-                }}
-                onChange={(e) => setScaleMax(e.target.value)}
-                onKeyPress={(event) => {
-                  event.key === "Enter"
-                    ? document.getElementById("scalemax").blur()
-                    : undefined;
-                }}
-              />
-            </div>
+            <NumberInput
+              label="Quantity"
+              onChange={setQuantity}
+              value={quantity}
+              tooltip={"Number of dots"}
+            ></NumberInput>
+            <NumberInput
+              label="Radius"
+              onChange={setRadius}
+              value={radius}
+              tooltip={"Sets rounding of corners"}
+            ></NumberInput>
+            <NumberInput
+              label="Width"
+              onChange={setWidth}
+              value={width}
+            ></NumberInput>
+            <NumberInput
+              label="Height"
+              onChange={setHeight}
+              value={height}
+            ></NumberInput>
+            <NumberInput
+              label="Opacity"
+              onChange={setOpacity}
+              value={opacity}
+              tooltip={"Sets transparancy"}
+            ></NumberInput>
+            <NumberInput
+              label="Scale start"
+              onChange={setScaleMin}
+              value={scaleMin}
+              tooltip={"Scale value at start"}
+            ></NumberInput>
+            <NumberInput
+              label="Scale end"
+              onChange={setScaleMax}
+              value={scaleMax}
+              tooltip={"Scale value at end"}
+            ></NumberInput>
           </div>
-          <div
-            className="form-style"
-            style={{
-              marginLeft: "2rem",
-              marginTop: "72px",
-              marginRight: "4rem",
-            }}
-          >
-            <div className="wrap-labelinput">
-              <label for="quantity">Margin</label>
-              <input
-                placeholder="5"
-                type="number"
-                value={margin}
-                id="margin"
-                name="margin"
-                onChange={(e) => setMargin(e.target.value)}
-              />
-            </div>
-            <div className="wrap-labelinput">
-              <label for="quantity">Rotation</label>
-              <input
-                placeholder="180"
-                type="number"
-                id="rotation"
-                value={rotation}
-                name="rotation"
-                onFocus={() => startRender(false)}
-                onBlur={() => startRender(true)}
-                onChange={(e) => {
-                  setRotation(e.target.value);
-                }}
-                onKeyPress={(event) => {
-                  event.key === "Enter"
-                    ? document.getElementById("rotation").blur()
-                    : undefined;
-                }}
-              />
-            </div>
-            <div className="wrap-labelinput">
-              <label for="color">Color</label>
-              <div
-                className="color-trigger"
-                onClick={() => setColorPickerOpen(!colorPickerOpen)}
-              >
-                {color ? (
-                  <p className="hex-text" style={{ color: uppercolor }}>
-                    {color.toUpperCase()}
-                  </p>
-                ) : (
-                  <p className="hex-text" style={{ color: "#747474" }}>
-                    Choose
-                  </p>
-                )}
-                {colorPickerOpen && (
-                  <motion.div style={{ marginTop: "20px" }}>
-                    <SketchPicker
-                      onChangeComplete={(color) => {
-                        setColor(color.hex), startRender(true);
-                      }}
-
-                      // triangle="hide"
-                    />
-                  </motion.div>
-                )}
-              </div>
-            </div>
-            <div className="wrap-labelinput">
-              {" "}
-              <Checkbox
-                label={"circular"}
-                onChange={setChecked}
-                checked={checked}
-              ></Checkbox>
-              {/* <input
-              type="color"
-              id="color"
-              name="color"
-              value="#ff0000"
-              // onChange={(e) => setColor(e.target.value)}
-            /> */}
-            </div>
+          <div className={`form-style cl-mid`}>
+            <NumberInput
+              label="Margin"
+              onChange={setMargin}
+              value={margin}
+              tooltip={"Distance between dots"}
+            ></NumberInput>
+            <NumberInput
+              label="Rotation"
+              onChange={setRotation}
+              value={rotation}
+            ></NumberInput>
+            <ColorInput color={color} setColor={setColor}></ColorInput>
+            <Checkbox
+              label={"circular"}
+              onChange={setChecked}
+              checked={checked}
+            ></Checkbox>
           </div>
 
           <div className="form-animation">
             <h2>Animation</h2>
-            <div className="wrap-labelinput">
-              <label for="duration">Duration</label>
-              <input
-                placeholder="1"
-                type="number"
-                id="duration"
-                name="duration"
-                min="0"
-                value={duration}
-                max="10"
-                onChange={(e) => setDuration(parseInt(e.target.value))}
-                onFocus={() => startRender(false)}
-                onBlur={() => startRender(true)}
-                onKeyPress={(event) => {
-                  event.key === "Enter"
-                    ? document.getElementById("duration").blur()
-                    : undefined;
-                }}
-              />
-            </div>
-            <div className="wrap-labelinput">
-              <label for="quantity">
-                Delay{" "}
-                <motion.p
-                  className="sublabel"
-                  variants={pVariants}
-                  animate={delayFocus ? "show" : "hide"}
-                  initial={"hide"}
-                  transition={{ duration: "0.3" }}
-                >
-                  Staggered delay per dot
-                </motion.p>
-              </label>
-              <input
-                placeholder="0.1"
-                type="number"
-                id="delay"
-                name="delay"
-                value={delay}
-                min="0"
-                max="1"
-                onChange={(e) => setDelay(e.target.value)}
-                onFocus={() => {
-                  startRender(false), setDelayFocus(true);
-                }}
-                onBlur={() => {
-                  startRender(true), setDelayFocus(false);
-                }}
-                onKeyPress={(event) => {
-                  event.key === "Enter"
-                    ? document.getElementById("delay").blur()
-                    : undefined;
-                }}
-              />
-            </div>
+            <NumberInput
+              label="Duration"
+              onChange={setDuration}
+              value={duration}
+            ></NumberInput>
+            <NumberInput
+              label="Delay"
+              onChange={setDelay}
+              value={delay}
+              tooltip={"Staggered delay per dot"}
+            ></NumberInput>
             <div className="wrap-labelinput">
               <label for="ease">Easing</label>
               <select
@@ -463,13 +203,6 @@ export default function Form(props) {
                 <option value="anticipate">anticipate</option>
               </select>
             </div>
-            {/* <div className="wrap-labelinput">
-              <label for="quantity">Ease 🚧</label>
-              <motion.div className="wrap-ease">
-                <motion.div className="ease-left">Loop</motion.div>
-                <motion.div className="ease-right">Yoyo</motion.div>
-              </motion.div>
-            </div> */}
           </div>
         </form>
       </motion.div>
@@ -569,20 +302,20 @@ export function Dot(props) {
   };
 
   return (
+    // <motion.div
+    //   style={{ width: props.circular ? "50px" : "0px" }}
+    //   animate={"end"}
+    //   initial={"start"}
+    //   variants={rotatevariants}
+    //   transition={transition}
+    // >
     <motion.div
-      style={{ width: props.circular ? "50px" : "0px" }}
-      animate={"end"}
-      initial={"start"}
-      variants={rotatevariants}
+      variants={variants}
+      animate={"show"}
+      initial={"hide"}
       transition={transition}
-    >
-      <motion.div
-        variants={variants}
-        animate={"show"}
-        initial={"hide"}
-        transition={transition}
-        style={dot}
-      ></motion.div>
-    </motion.div>
+      style={dot}
+    ></motion.div>
+    // </motion.div>
   );
 }
