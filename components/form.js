@@ -49,6 +49,7 @@ export default function Form(props) {
                             </p>
                         ) : (
                             <Preview
+                                quantity={quantity}
                                 delay={delay}
                                 radius={radius}
                                 margin={margin}
