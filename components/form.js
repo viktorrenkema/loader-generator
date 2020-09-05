@@ -149,6 +149,9 @@ export default function Form(props) {
               label="Rotation"
               onChange={setRotation}
               value={rotation}
+              onFocus={startRender}
+              onBlur={startRender}
+              onKeyPress={startRender}
             ></NumberInput>
             <ColorInput color={color} setColor={setColor}></ColorInput>
             <Checkbox
@@ -164,12 +167,18 @@ export default function Form(props) {
               label="Duration"
               onChange={setDuration}
               value={duration}
+              onKeyPress={startRender}
+              onFocus={startRender}
+              onBlur={startRender}
             ></NumberInput>
             <NumberInput
               label="Delay"
               onChange={setDelay}
               value={delay}
               tooltip={"Staggered delay per dot"}
+              onKeyPress={startRender}
+              onFocus={startRender}
+              onBlur={startRender}
             ></NumberInput>
             <div className="wrap-labelinput">
               <label for="ease">Easing</label>

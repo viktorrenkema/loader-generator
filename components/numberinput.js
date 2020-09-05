@@ -2,7 +2,9 @@ import * as React from "react";
 import { motion } from "framer-motion";
 
 export default function NumberInput(props) {
-  const { label, onChange, value, tooltip } = props;
+  const { label, onChange, value, tooltip, onFocus, onBlur } = props;
+
+  const [focus, setFocus] = React.useState(false);
 
   const variants = {
     show: {
@@ -21,7 +23,13 @@ export default function NumberInput(props) {
     onChange,
   ]);
 
-  const [focus, setFocus] = React.useState(false);
+  const handleFocus = React.useCallback(() => onFocus(false), [onFocus]);
+  const handleBlur = React.useCallback(() => onBlur(true), [onBlur]);
+  const handleKey = (event) => {
+    event.key === "Enter"
+      ? document.getElementById(props.label).blur()
+      : undefined;
+  };
 
   return (
     <div className="wrap-labelinput" style={{ width: "100%" }}>
@@ -39,12 +47,13 @@ export default function NumberInput(props) {
       </label>
       <input
         type="number"
-        id="quantity"
+        id={label}
         name="quantity"
         placeholder="0"
         value={value}
-        onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
+        onFocus={onFocus ? handleFocus : null}
+        onBlur={onBlur ? handleBlur : null}
+        onKeyPress={onBlur ? handleKey : null}
         onChange={handleChange}
       />
     </div>
