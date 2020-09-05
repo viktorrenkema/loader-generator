@@ -413,3 +413,9 @@ select {
 .hAYaRF {
   padding: 0 !important;
 }
+
+input[type="checkbox"] {
+  height: 28px;
+  padding: 5px;
+  margin: 8px 0;
+}

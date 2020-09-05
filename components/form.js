@@ -21,9 +21,10 @@ export default function Form(props) {
   const [duration, setDuration] = React.useState(1);
   const [delay, setDelay] = React.useState(0.1);
   const [ease, setEase] = React.useState("linear");
-  const [checked, setChecked] = React.useState(false);
+  const [experimental, setExperimental] = React.useState(false);
 
-  console.log(margin, scaleMin, scaleMax);
+  console.log("Experimental is toggled " + experimental);
+
   function handleClick(cb) {
     display("Clicked, new value = " + cb);
   }
@@ -47,6 +48,7 @@ export default function Form(props) {
         scaleMax={scaleMax}
         ease={ease}
         rotation={rotation}
+        experimental={experimental}
       ></Dot>
     ),
       (snippetelements += `      <motion.div\r\n                          variants={variants}\r\n                          animate={\"show\"}\r\n                          initial={\"hide\"}\r\n                          transition={transition}\r\n                          style={dot}>\r\n                  <\/motion.div>\r\n            `);
@@ -78,7 +80,7 @@ export default function Form(props) {
 
         {
           <div className="wrap-dotsrenderer">
-            <div>
+            <div style={{ display: "flex" }}>
               {renderdots.length == 0 ? (
                 <p className="placeholder-text">
                   Define your loader and it’ll show here
@@ -130,12 +132,18 @@ export default function Form(props) {
               onChange={setScaleMin}
               value={scaleMin}
               tooltip={"Scale value at start"}
+              onKeyPress={startRender}
+              onFocus={startRender}
+              onBlur={startRender}
             ></NumberInput>
             <NumberInput
               label="Scale end"
               onChange={setScaleMax}
               value={scaleMax}
               tooltip={"Scale value at end"}
+              onKeyPress={startRender}
+              onFocus={startRender}
+              onBlur={startRender}
             ></NumberInput>
           </div>
           <div className={`form-style cl-mid`}>
@@ -155,9 +163,9 @@ export default function Form(props) {
             ></NumberInput>
             <ColorInput color={color} setColor={setColor}></ColorInput>
             <Checkbox
-              label={"circular"}
-              onChange={setChecked}
-              checked={checked}
+              label={"experimental"}
+              onChange={setExperimental}
+              checked={experimental}
             ></Checkbox>
           </div>
 
@@ -304,27 +312,56 @@ export function Dot(props) {
   const transition = {
     yoyo: Infinity,
     // flip: Infinity,
-    // loop: Infinity,
+    // loop: Infinity, // useful for circular
     ease: props.ease,
     duration: props.duration ? props.duration : 1,
     delay: props.customdelay,
   };
 
   return (
-    // <motion.div
-    //   style={{ width: props.circular ? "50px" : "0px" }}
-    //   animate={"end"}
-    //   initial={"start"}
-    //   variants={rotatevariants}
-    //   transition={transition}
-    // >
-    <motion.div
-      variants={variants}
-      animate={"show"}
-      initial={"hide"}
-      transition={transition}
-      style={dot}
-    ></motion.div>
-    // </motion.div>
+    <div>
+      {props.experimental ? (
+        <motion.div
+          className="experimental"
+          style={{ width: props.experimental ? "50px" : "0px" }}
+          animate={"end"}
+          initial={"start"}
+          variants={rotatevariants}
+          transition={transition}
+        >
+          {" "}
+          <motion.div
+            variants={variants}
+            animate={"show"}
+            initial={"hide"}
+            transition={transition}
+            style={dot}
+          ></motion.div>{" "}
+        </motion.div>
+      ) : (
+        <motion.div
+          className="simple"
+          variants={variants}
+          animate={"show"}
+          initial={"hide"}
+          transition={transition}
+          style={dot}
+        ></motion.div>
+      )}
+    </div>
   );
 }
+
+// <div>
+// {renderdots.length == 0 ? (
+//   <p className="placeholder-text">
+//     Define your loader and it’ll show here
+//   </p>
+// ) : render == false ? (
+//   <p className="placeholder-text">
+//     Hit <code>enter</code> (or click outside) to generate{" "}
+//   </p>
+// ) : (
+//   render && renderdots
+// )}
+// </div>
