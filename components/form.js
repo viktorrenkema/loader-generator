@@ -1,7 +1,9 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import CodeBlock from "../components/codeblock";
-import Checkbox from "../components/checkbox";
+import Checkbox from "./checkbox";
+import Dot from "./dot";
+import Preview from "./preview";
 import NumberInput from "../components/numberinput";
 import ColorInput from "../components/colorinput";
 
@@ -23,50 +25,6 @@ export default function Form(props) {
   const [ease, setEase] = React.useState("linear");
   const [experimental, setExperimental] = React.useState(false);
 
-  console.log("Experimental is toggled " + experimental);
-
-  function handleClick(cb) {
-    display("Clicked, new value = " + cb);
-  }
-
-  // Add # of dots to array to render ↓
-  let renderdots = [];
-  let snippetelements = "";
-  for (let i = 0; i < quantity; i = i + 1) {
-    renderdots.push(
-      <Dot
-        key={i}
-        customdelay={delay * i}
-        radius={radius}
-        margin={margin}
-        duration={duration}
-        width={width}
-        height={height}
-        color={color}
-        opacity={opacity}
-        scaleMin={scaleMin}
-        scaleMax={scaleMax}
-        ease={ease}
-        rotation={rotation}
-        experimental={experimental}
-      ></Dot>
-    ),
-      (snippetelements += `      <motion.div\r\n                          variants={variants}\r\n                          animate={\"show\"}\r\n                          initial={\"hide\"}\r\n                          transition={transition}\r\n                          style={dot}>\r\n                  <\/motion.div>\r\n            `);
-  }
-
-  const pVariants = {
-    show: {
-      opacity: 1,
-      display: "block",
-      y: "2px",
-    },
-    hide: {
-      opacity: 1,
-      display: "none",
-      y: "0px",
-    },
-  };
-
   return (
     <motion.div style={{ display: "flex", flexDirection: "column" }}>
       <h1 className="headerblank">
@@ -76,25 +34,23 @@ export default function Form(props) {
         className="editor"
         style={{ display: "flex", flexDirection: "row" }}
       >
-        {/* Render loader dots ↓ */}
-
-        {
-          <div className="wrap-dotsrenderer">
-            <div style={{ display: "flex" }}>
-              {renderdots.length == 0 ? (
-                <p className="placeholder-text">
-                  Define your loader and it’ll show here
-                </p>
-              ) : render == false ? (
-                <p className="placeholder-text">
-                  Hit <code>enter</code> (or click outside) to generate{" "}
-                </p>
-              ) : (
-                render && renderdots
-              )}
-            </div>
-          </div>
-        }
+        <Preview
+          render={render}
+          quantity={quantity}
+          delay={delay}
+          radius={radius}
+          margin={margin}
+          duration={duration}
+          width={width}
+          height={height}
+          color={color}
+          opacity={opacity}
+          scaleMin={scaleMin}
+          scaleMax={scaleMax}
+          ease={ease}
+          rotation={rotation}
+          experimental={experimental}
+        ></Preview>
 
         <form autoComplete="off">
           <div className="form-style">
@@ -265,90 +221,10 @@ export default function Form(props) {
       <motion.div className="snippet">
         <CodeBlock
           showLineNumbers={true}
-          text={`import * as React from \"react\";\r\nimport { motion } from \"framer-motion\";\r\n\r\n\/\/ Discover the full API: https:\/\/www.framer.com\/api\/motion\r\n\r\nexport  function Component(props) {\r\n    const dot = {\r\n      width: ${width},\r\n      height: ${height},\r\n      opacity: ${opacity},\r\n      margin: ${margin},\r\n      borderRadius: ${radius},\r\n      display: \"inline-block\",\r\n      background: ${color},\r\n    }\r\n  \r\n  \r\n    const variants = {\r\n      show: {\r\n        scale: ${scaleMax},\r\n        rotate: 0,\r\n      },\r\n      hide: {\r\n        scale: ${scaleMin},\r\n        rotate: ${rotation},\r\n      },\r\n    }\r\n  \r\n    const transition = {\r\n      yoyo: Infinity,\r\n      ease: ${ease},\r\n      duration: ${duration},\r\n      delay: ${delay},\r\n    }\r\n\r\n    return (\r\n            <motion.div>\r\n              ${snippetelements}<\/motion.div>                     \r\n)\r\n      }`}
+          text={`import * as React from \"react\";\r\nimport { motion } from \"framer-motion\";\r\n\r\n\/\/ Discover the full API: https:\/\/www.framer.com\/api\/motion\r\n\r\nexport  function Component(props) {\r\n    const dot = {\r\n      width: ${width},\r\n      height: ${height},\r\n      opacity: ${opacity},\r\n      margin: ${margin},\r\n      borderRadius: ${radius},\r\n      display: \"inline-block\",\r\n      background: ${color},\r\n    }\r\n  \r\n  \r\n    const variants = {\r\n      show: {\r\n        scale: ${scaleMax},\r\n        rotate: 0,\r\n      },\r\n      hide: {\r\n        scale: ${scaleMin},\r\n        rotate: ${rotation},\r\n      },\r\n    }\r\n  \r\n    const transition = {\r\n      yoyo: Infinity,\r\n      ease: ${ease},\r\n      duration: ${duration},\r\n      delay: ${delay},\r\n    }\r\n\r\n    return (\r\n            <motion.div>\r\n              <\/motion.div>                     \r\n)\r\n      }`}
         ></CodeBlock>
       </motion.div>
     </motion.div>
-  );
-}
-
-export function Dot(props) {
-  const dot = {
-    width: `${props.width}px`,
-    height: `${props.height}px`,
-    opacity: props.opacity,
-    margin: `${props.margin}px`,
-    borderRadius: `${props.radius}px`,
-    background: props.color ? `${props.color}` : "#fecf44",
-    display: "inline-block",
-    transform: "translateZ(42px)",
-    perspective: "20px",
-  };
-
-  const variants = {
-    show: {
-      scale: parseFloat(props.scaleMax),
-      // background: "#fecf44",
-      rotate: 0,
-    },
-    hide: {
-      scale: parseFloat(props.scaleMin),
-      // background: "#fca967",
-      rotate: parseInt(props.rotation),
-    },
-  };
-
-  const rotatevariants = {
-    start: {
-      rotate: 0,
-      // perspective: 0
-    },
-    end: {
-      rotate: 360,
-      // perspective:600,
-    },
-  };
-
-  const transition = {
-    yoyo: Infinity,
-    // flip: Infinity,
-    // loop: Infinity, // useful for circular
-    ease: props.ease,
-    duration: props.duration ? props.duration : 1,
-    delay: props.customdelay,
-  };
-
-  return (
-    <div>
-      {props.experimental ? (
-        <motion.div
-          className="experimental"
-          style={{ width: props.experimental ? "50px" : "0px" }}
-          animate={"end"}
-          initial={"start"}
-          variants={rotatevariants}
-          transition={transition}
-        >
-          {" "}
-          <motion.div
-            variants={variants}
-            animate={"show"}
-            initial={"hide"}
-            transition={transition}
-            style={dot}
-          ></motion.div>{" "}
-        </motion.div>
-      ) : (
-        <motion.div
-          className="simple"
-          variants={variants}
-          animate={"show"}
-          initial={"hide"}
-          transition={transition}
-          style={dot}
-        ></motion.div>
-      )}
-    </div>
   );
 }
 
