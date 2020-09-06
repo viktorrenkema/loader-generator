@@ -227,17 +227,3 @@ export default function Form(props) {
     </motion.div>
   );
 }
-
-// <div>
-// {renderdots.length == 0 ? (
-//   <p className="placeholder-text">
-//     Define your loader and it’ll show here
-//   </p>
-// ) : render == false ? (
-//   <p className="placeholder-text">
-//     Hit <code>enter</code> (or click outside) to generate{" "}
-//   </p>
-// ) : (
-//   render && renderdots
-// )}
-// </div>
