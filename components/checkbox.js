@@ -1,5 +1,4 @@
 import * as React from "react";
-import { motion } from "framer-motion";
 
 export default function Checkbox(props) {
   const { label, onChange, checked } = props;
@@ -10,7 +9,9 @@ export default function Checkbox(props) {
   //   const handleChange = React.useCallback((e) => onChange(!checked), [onChange]);
   return (
     <div className="wrap-labelinput" style={{ width: "100%" }}>
-      <label for={label}>Circular?</label>
+      <label for={label}>
+        {props.label.charAt(0).toUpperCase() + props.label.slice(1)}
+      </label>
       <input
         onChange={handleChange}
         style={{ paddingLeft: "10px" }}

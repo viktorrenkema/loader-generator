@@ -241,7 +241,7 @@ input[type="number"] {
 
 .wrap-dotsrenderer {
   border-radius: 5px;
-  background: #111;
+  background: #1e1f23;
   display: grid;
   place-items: center;
   grid-auto-flow: column;
@@ -264,6 +264,12 @@ input[type="number"] {
 .form-animation {
   width: 200px;
   box-sizing: unset;
+}
+
+.cl-mid {
+  margin-left: 2rem;
+  margin-top: 72px;
+  margin-right: 4rem;
 }
 
 .sublabel {
@@ -406,4 +412,10 @@ select {
 
 .hAYaRF {
   padding: 0 !important;
+}
+
+input[type="checkbox"] {
+  height: 28px;
+  padding: 5px;
+  margin: 8px 0;
 }
