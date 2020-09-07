@@ -44,10 +44,7 @@ export default function ConfigureSection(props) {
       <h1 className="headerblank">
         <span className="headerone">1.</span> Configure
       </h1>
-      <motion.div
-        className="editor"
-        style={{ display: "flex", flexDirection: "row" }}
-      >
+      <motion.div className="wrap-configure-form">
         <StyleForm
           quantity={quantity}
           radius={radius}
