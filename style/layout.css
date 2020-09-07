@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kufam:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 html,
 body {
@@ -96,7 +96,7 @@ li {
   text-align: center;
   padding: 16px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 1.4px;
 }
 
@@ -220,7 +220,7 @@ a {
 
 label {
   font-weight: 500;
-  font-family: "Kufam", serif;
+  font-family: "Inter", serif;
   color: var(--Subtext, #dedede);
   font-size: 14px;
   letter-spacing: 0px;
@@ -231,7 +231,7 @@ input[type="number"],
 select {
   width: 60px;
   padding: 5px;
-  margin: 8px 0;
+  margin: 5px 0px 5px 10px;
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
@@ -239,14 +239,13 @@ select {
   color: var(--Subtext, #dedede);
   font-size: 14px;
   border-radius: 5px;
-  border: 0px solid #393740;
+  border: 1px solid transparent;
+  outline: none;
 }
 
 input[type="number"]:focus,
 select:focus {
-  width: 100px;
-
-  border: 1px solid #fca967;
+  border: 1px solid #f35c98;
   outline: none;
 }
 
@@ -291,6 +290,7 @@ input[type="number"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .form-style,
@@ -313,18 +313,15 @@ input[type="number"] {
 }
 
 .color-trigger {
-  width: 100px;
   height: 28px;
-  padding: 5px;
-  margin: 8px 0;
   display: inline-block;
   box-sizing: border-box;
-
   border-radius: 4px;
-  /* background: linear-gradient(180deg, #302b38, #302b38); */
-  border: 1px solid #302f3a;
   cursor: pointer;
-  background: #080808 !important;
+  width: 60px;
+  padding: 5px;
+  margin: 5px 0px 5px 10px;
+  background: #1e1f23;
 }
 
 .hex-text {

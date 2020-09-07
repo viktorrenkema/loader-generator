@@ -32,7 +32,7 @@ export default function NumberInput(props) {
   };
 
   return (
-    <div className="wrap-labelinput" style={{ width: "100%" }}>
+    <div className="wrap-labelinput">
       <label htmlFor={label}>
         {label}
         <motion.p
