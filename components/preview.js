@@ -60,7 +60,7 @@ export default function Preview(props) {
               </p>
             ) : render == false ? (
               <p className="placeholder-text">
-                Hit <code>enter</code> (or click outside) to generate{" "}
+                Hit <code>enter</code> (or click anywhere) to generate{" "}
               </p>
             ) : (
               render && renderdots

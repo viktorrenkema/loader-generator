@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import CodeBlock from "./codeblock";
 import Preview from "./preview";
+import TerminalCommand from "./terminal-command";
 import TransitionForm from "./transition-form";
 import StyleForm from "./style-form";
 
@@ -86,36 +87,28 @@ export default function ConfigureSection(props) {
         <span className="headertwo">2.</span> Install
       </h1>
       <motion.div className="wrap-installation">
-        <p>
+        <p className="installation-text">
           Your Loader runs on{" "}
           <a href="https://www.framer.com/motion/" target="_blank">
             Framer Motion
           </a>
           , an open-source production-ready animation library for React.
-        </p>
-        <p>
-          To bring your Loader’s code into your React app, all you need to do is
-          install the framer-motion{" "}
+          <br></br>
+          <br></br>Just install the{" "}
           <a href="https://www.npmjs.com/package/framer-motion" target="_blank">
             npm package
           </a>{" "}
-          from your command line:
+          into your React app to bring your Loader’s code into your project:
         </p>
         <br></br>
-        <p>Yarn</p>
-        <div style={{ width: "250px" }}>
-          <CodeBlock
-            showLineNumbers={false}
-            text={`yarn add framer-motion`}
-          ></CodeBlock>
-        </div>
-        <p>NPM</p>
-        <div style={{ width: "250px" }}>
-          <CodeBlock
-            showLineNumbers={false}
-            text={`npm i framer-motion`}
-          ></CodeBlock>
-        </div>
+        <TerminalCommand
+          installer={"Yarn"}
+          command={"yarn add framer-motion"}
+        ></TerminalCommand>
+        <TerminalCommand
+          installer={"NPM"}
+          command={"npm i framer-motion"}
+        ></TerminalCommand>
       </motion.div>
 
       <h1 className="headerblank">

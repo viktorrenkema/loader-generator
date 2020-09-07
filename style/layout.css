@@ -1,13 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kufam:wght@400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap");
+
+/* 
+var(accent-1, #f35c98)
+ */
+
+/* 
+var(accent-2, #f99576)
+ */
+
+/* 
+var(accent-3, #fcca49)
+ */
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 * {
@@ -219,7 +232,7 @@ a {
 /* Form styling */
 
 label {
-  font-weight: 500;
+  font-weight: 400;
   font-family: "Inter", serif;
   color: var(--Subtext, #dedede);
   font-size: 14px;
@@ -231,7 +244,7 @@ input[type="number"],
 select {
   width: 60px;
   padding: 5px;
-  margin: 5px 0px 5px 10px;
+  margin: 5px 0px 5px 15px;
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
@@ -249,6 +262,10 @@ select:focus {
   outline: none;
 }
 
+.wrap-configure-form > div:nth-child(2) > div {
+  margin-right: 0px;
+}
+
 /* input,
 input::placeholder {
   text-align: center;
@@ -261,6 +278,15 @@ input:focus {
 form {
   display: flex;
   flex-direction: row;
+}
+
+p::selection,
+span::selection,
+div::selection,
+h1::selection,
+h2::selection {
+  background: #f35c98;
+  color: white;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -332,6 +358,14 @@ input[type="number"] {
   font-weight: 600;
 }
 
+.installation-text {
+  font-family: "Inter", sans-serif;
+  color: var(--Subtext, #dedede);
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
 code {
   background: unset !important;
   font-size: 14px !important;
@@ -371,22 +405,16 @@ select {
   background-position-x: 100%;
   background-position-y: 1px;
   border-radius: 2px;
-  font-size: 14px;
+  font-size: 12px;
   height: 28px;
   border-radius: 4px;
+  width: 80px;
+  background-color: #1e2024;
 }
 
 .lmSPPo,
 .bFNYQa {
   border: 0px;
-}
-
-.wrap-installation {
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-
-  background: #080808;
 }
 
 .headerblank {
@@ -450,12 +478,92 @@ select {
   border-radius: 5px;
 }
 
-.hAYaRF {
-  padding: 0 !important;
-}
-
 input[type="checkbox"] {
   height: 28px;
   padding: 5px;
   margin: 8px 0;
+}
+
+/* 0. GENERAL */
+.wrapper-label {
+  background: var(--Accent1, #f35c98);
+  border-radius: 7px;
+  border: 3px solid #1e1f23;
+  width: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  float: right;
+  left: -40px;
+  bottom: 5px;
+}
+
+.beta-text {
+  font-family: "Kufam", serif;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0px;
+  padding: 4px;
+  margin: 0px;
+  line-height: 1.2;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* 2. INSTALLATION SECTION */
+
+.wrap-installation {
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #131417;
+}
+
+.dependency-command {
+  width: 300px;
+  padding: 10px;
+  background-color: #1e1f23;
+  font-family: "Source Code Pro", serif;
+  color: var(--Subtext, #dedede);
+  border-radius: 4px;
+}
+
+.dollar-sign {
+  user-select: none;
+  opacity: 0.5;
+  font-family: "Source Code Pro", serif;
+  color: var(--Subtext, #dedede);
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  font-weight: 500;
+  padding-right: 10px;
+}
+
+.yarnnpm {
+  font-family: "Kufam", serif;
+  margin-right: 40px;
+}
+
+.dependency-command::selection {
+  background: #f99576;
+}
+
+.wrap-npm-command {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+/* 3. CODE SNIPPET */
+.snippet > div > span {
+  background-color: #131417 !important;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.hAYaRF {
+  padding: 0rem;
 }

@@ -51,6 +51,7 @@ export default function TransitionForm(props) {
                 : undefined;
             }}
           >
+            <option value="anticipate">anticipate</option>
             <option value="linear">linear</option>
             <option value="easeIn">easeIn</option>
             <option value="easeOut">easeOut</option>
@@ -61,7 +62,6 @@ export default function TransitionForm(props) {
             <option value="backIn">backIn</option>
             <option value="backOut">backOut</option>
             <option value="backInOut">backInOut</option>
-            <option value="anticipate">anticipate</option>
           </select>
         </div>
       </div>
