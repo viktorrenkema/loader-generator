@@ -400,10 +400,10 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   background: #100f15;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-image: url("data:image/svg+xml,%3C!-- Icon --%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath d='M 0 0 L 20 0 L 20 20 L 0 20 Z' fill='transparent'%3E%3C/path%3E%3Cpath d='M 5.833 8.333 L 10 12.5 L 14.167 8.333' fill='transparent' stroke-width='0.83' stroke='%23FFFFFF'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position-x: 100%;
-  background-position-y: 1px;
+  background-position-y: 3px;
   border-radius: 2px;
   font-size: 12px;
   height: 28px;
@@ -511,6 +511,13 @@ input[type="checkbox"] {
   font-style: normal;
 }
 
+/* 1. FORMS */
+.unit {
+  position: relative;
+  margin-left: -50px;
+  font-size: 12px;
+}
+
 /* 2. INSTALLATION SECTION */
 
 .wrap-installation {
@@ -565,5 +572,10 @@ input[type="checkbox"] {
 }
 
 .hAYaRF {
-  padding: 0rem;
+  padding: 0rem !important;
+  border-radius: 10px !important;
+}
+
+.snippet > div > span {
+  border-radius: 10px !important;
 }

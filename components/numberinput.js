@@ -2,7 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 
 export default function NumberInput(props) {
-  const { label, onChange, value, tooltip, onFocus, onBlur } = props;
+  const { label, onChange, value, tooltip, onFocus, onBlur, unit } = props;
 
   const [focus, setFocus] = React.useState(false);
 
@@ -55,7 +55,10 @@ export default function NumberInput(props) {
         onBlur={onBlur ? handleBlur : null}
         onKeyPress={onBlur ? handleKey : null}
         onChange={handleChange}
-      />
+      ></input>
+      {/* <span className="unit" style={{ display: unit ? "static" : "none" }}>
+        {unit}
+      </span> */}
     </div>
   );
 }

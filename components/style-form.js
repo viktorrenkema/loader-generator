@@ -45,6 +45,7 @@ export default function StyleForm(props) {
           onChange={setMargin}
           value={margin}
           tooltip={"Distance between dots"}
+          unit={"px"}
         ></NumberInput>
       </div>
       <div className="wrap-configure-input">

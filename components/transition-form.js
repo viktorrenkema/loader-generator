@@ -35,7 +35,6 @@ export default function TransitionForm(props) {
         <div className="wrap-labelinput">
           <label for="ease">Easing</label>
           <select
-            style={{ paddingLeft: "10px" }}
             id="ease"
             name="ease"
             onChange={(e) => setEase(e.target.value)}
