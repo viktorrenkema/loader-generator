@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kufam:wght@400;500;600;700;800&display=swap");
 
 html,
 body {
@@ -43,12 +44,41 @@ p {
 
 .container {
   background: #080808;
+  display: flex;
+}
+.container-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #1e1f23;
+  padding: 5rem 5rem;
+  flex: 1;
+  margin-right: 30vw;
+  align-items: center;
+}
+.container-right {
+  height: 100%;
+  width: 30vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background: #131417;
+  overflow-x: hidden;
+}
+
+.preview {
+  background: #131417;
+  justify-content: center;
+  display: flex;
+  height: 100%;
 }
 
 h1,
 h2 {
   color: white;
-  font-family: "Alata", sans-serif;
+  /* font-family: "Alata", sans-serif; */
+  font-family: "Kufam", serif;
 }
 
 p,
@@ -77,24 +107,6 @@ ul {
   text-decoration: none;
 }
 
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-}
-
 .editor {
   padding: 2rem 0;
   flex: 1;
@@ -103,13 +115,8 @@ main {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  border: 1px solid #ffcf43;
   background: #080808;
   flex-direction: row;
-}
-
-.snippet {
-  border: 1px solid #f45a99;
 }
 
 footer {
@@ -136,21 +143,11 @@ a {
   text-decoration: none;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: none;
-}
-
 .title {
   margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  font-size: 48px;
+  letter-spacing: 0.8px;
+  line-height: 1.2;
 }
 
 .title,
@@ -159,8 +156,17 @@ a {
 }
 
 .description {
-  line-height: 1.5;
-  font-size: 1.5rem;
+  width: 50%;
+
+  overflow: hidden;
+  font-family: "Kufam", serif;
+  color: var(--Subtext, #dedede);
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
 }
 
 /* code {
@@ -240,14 +246,10 @@ input[type="number"] {
 }
 
 .wrap-dotsrenderer {
-  border-radius: 5px;
-  background: #1e1f23;
+  background: #131417;
   display: grid;
   place-items: center;
   grid-auto-flow: column;
-  height: 200px;
-  width: 500px;
-  margin-right: 4rem;
 }
 
 .placeholder-text {
@@ -355,32 +357,42 @@ select {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  border: 1px solid #fa9476;
+
   background: #080808;
 }
 
 .headerblank {
   color: "white";
-  font-size: 42px;
+  font-size: 22px;
+  font-weight: 500;
   margin-top: 6rem;
 }
 
 .headerone {
-  color: #fecf44;
+  color: var(--Accent1, #f35c98);
   display: inline-block;
-  font-size: 32px;
+  font-size: 28px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 .headertwo {
-  color: #fa9477;
+  color: #f99576;
   display: inline-block;
-  font-size: 32px;
+  font-size: 28px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 .headerthree {
-  color: #f45b99;
+  color: #fcca49;
   display: inline-block;
-  font-size: 32px;
+  font-size: 28px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 #__next > div > main > div > div > div.snippet > div > span {

@@ -50,10 +50,7 @@ export default function Preview(props) {
   }
 
   return (
-    <motion.div
-      className="editor"
-      style={{ display: "flex", flexDirection: "row" }}
-    >
+    <motion.div className="preview">
       {
         <div className="wrap-dotsrenderer">
           <div style={{ display: "flex" }}>

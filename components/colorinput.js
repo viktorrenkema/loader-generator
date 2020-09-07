@@ -8,7 +8,7 @@ export default function ColorInput(props) {
 
   const { color, setColor, onChange } = props;
   let uppercolor = color.toUpperCase();
-  console.log(color.toUpperCase());
+
   const variants = {
     show: {
       opacity: 1,
