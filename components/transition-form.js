@@ -10,6 +10,8 @@ export default function TransitionForm(props) {
     setEase,
     delay,
     startRender,
+    repeatType,
+    setRepeatType,
   } = props;
 
   return (
@@ -61,6 +63,29 @@ export default function TransitionForm(props) {
             <option value="backIn">backIn</option>
             <option value="backOut">backOut</option>
             <option value="backInOut">backInOut</option>
+          </select>
+        </div>
+        <div className="wrap-labelinput">
+          <label htmlFor="repeat">Repeat Type</label>
+          <select
+            id="repeat"
+            name="repeat"
+            onChange={(e) => setRepeatType(e.target.value)}
+            onFocus={() => {
+              startRender(false);
+            }}
+            onBlur={() => {
+              startRender(true);
+            }}
+            onKeyPress={(event) => {
+              event.key === "Enter"
+                ? document.getElementById("repeat").blur()
+                : undefined;
+            }}
+          >
+            <option value="reverse">reverse</option>
+            <option value="loop">loop</option>
+            <option value="mirror">mirror</option>
           </select>
         </div>
       </div>

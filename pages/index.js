@@ -26,6 +26,7 @@ export default function Home(props) {
   const [duration, setDuration] = React.useState(1);
   const [delay, setDelay] = React.useState(0.2);
   const [ease, setEase] = React.useState("anticipate");
+  const [repeatType, setRepeatType] = React.useState("reverse");
 
   return (
     <div className="container">
@@ -132,6 +133,8 @@ export default function Home(props) {
               delay={delay}
               render={render}
               startRender={startRender}
+              repeatType={repeatType}
+              setRepeatType={setRepeatType}
             ></ConfigureSection>
           )}
           {tab == 2 && (
@@ -168,6 +171,8 @@ export default function Home(props) {
               delay={delay}
               render={render}
               startRender={startRender}
+              repeatType={repeatType}
+              setRepeatType={setRepeatType}
             ></ConfigureSection>
           )}{" "}
           {tab == 3 && (
@@ -204,6 +209,8 @@ export default function Home(props) {
               delay={delay}
               render={render}
               startRender={startRender}
+              repeatType={repeatType}
+              setRepeatType={setRepeatType}
             ></ConfigureSection>
           )}
         </div>
@@ -225,6 +232,8 @@ export default function Home(props) {
           ease={ease}
           rotation={rotation}
           experimental={experimental}
+          repeatType={repeatType}
+          setRepeatType={setRepeatType}
         ></Preview>
       </div>
     </div>

@@ -39,6 +39,8 @@ export default function ConfigureSection(props) {
     setEase,
     ease,
     delay,
+    repeatType,
+    setRepeatType,
   } = props;
 
   return (
@@ -82,6 +84,8 @@ export default function ConfigureSection(props) {
           delay={delay}
           render={render}
           startRender={startRender}
+          repeatType={repeatType}
+          setRepeatType={setRepeatType}
         ></TransitionForm>
       </motion.div>
       <h1 className="headerblank">
@@ -132,6 +136,8 @@ export default function ConfigureSection(props) {
             ease,
             rotation,
             quantity,
+            repeatType,
+            setRepeatType,
           })}
         ></CodeBlock>
       </motion.div>

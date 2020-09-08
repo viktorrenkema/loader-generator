@@ -37,9 +37,11 @@ export default function Dot(props) {
   };
 
   const transition = {
-    yoyo: Infinity,
+    // yoyo: Infinity,
     // flip: Infinity,
     // loop: Infinity, // useful for circular
+    repeat: "Infinity",
+    repeatType: props.repeatType,
     ease: props.ease,
     duration: props.duration ? props.duration : 1,
     delay: props.customdelay,
