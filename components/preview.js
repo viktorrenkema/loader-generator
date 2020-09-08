@@ -23,6 +23,7 @@ export default function Preview(props) {
     experimental,
     i,
     render,
+    repeatType,
   } = props;
 
   let renderdots = [];
@@ -44,16 +45,14 @@ export default function Preview(props) {
         ease={ease}
         rotation={rotation}
         experimental={experimental}
+        repeatType={repeatType}
       ></Dot>
     ),
       (snippetelements += `      <motion.div\r\n                          variants={variants}\r\n                          animate={\"show\"}\r\n                          initial={\"hide\"}\r\n                          transition={transition}\r\n                          style={dot}>\r\n                  <\/motion.div>\r\n            `);
   }
 
   return (
-    <motion.div
-      className="editor"
-      style={{ display: "flex", flexDirection: "row" }}
-    >
+    <motion.div className="preview">
       {
         <div className="wrap-dotsrenderer">
           <div style={{ display: "flex" }}>
@@ -63,7 +62,7 @@ export default function Preview(props) {
               </p>
             ) : render == false ? (
               <p className="placeholder-text">
-                Hit <code>enter</code> (or click outside) to generate{" "}
+                Hit <code>enter</code> (or click anywhere) to generate{" "}
               </p>
             ) : (
               render && renderdots

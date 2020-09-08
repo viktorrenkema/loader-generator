@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "framer-motion": "2.0.0",
+    "framer-motion": "2.6.0",
     "lodash": "^4.17.19",
     "next": "9.3.5",
     "react": "16.13.1",

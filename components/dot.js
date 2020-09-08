@@ -8,7 +8,7 @@ export default function Dot(props) {
     opacity: props.opacity,
     margin: `${props.margin}px`,
     borderRadius: `${props.radius}px`,
-    background: props.color ? `${props.color}` : "#fecf44",
+    background: props.color ? `${props.color}` : "#F35C98",
     display: "inline-block",
     transform: "translateZ(42px)",
     perspective: "20px",
@@ -17,12 +17,10 @@ export default function Dot(props) {
   const variants = {
     show: {
       scale: parseFloat(props.scaleMax),
-      // background: "#fecf44",
       rotate: 0,
     },
     hide: {
       scale: parseFloat(props.scaleMin),
-      // background: "#fca967",
       rotate: parseInt(props.rotation),
     },
   };
@@ -39,9 +37,11 @@ export default function Dot(props) {
   };
 
   const transition = {
-    yoyo: Infinity,
+    // yoyo: Infinity,
     // flip: Infinity,
     // loop: Infinity, // useful for circular
+    repeat: "Infinity",
+    repeatType: props.repeatType,
     ease: props.ease,
     duration: props.duration ? props.duration : 1,
     delay: props.customdelay,
