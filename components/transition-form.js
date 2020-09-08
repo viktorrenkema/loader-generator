@@ -33,7 +33,7 @@ export default function TransitionForm(props) {
           onBlur={startRender}
         ></NumberInput>
         <div className="wrap-labelinput">
-          <label for="ease">Easing</label>
+          <label htmlFor="ease">Easing</label>
           <select
             id="ease"
             name="ease"

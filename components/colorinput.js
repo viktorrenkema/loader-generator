@@ -34,7 +34,7 @@ export default function ColorInput(props) {
 
   return (
     <div className="wrap-labelinput">
-      <label for="color">Color</label>
+      <label htmlFor="color">Color</label>
       <div
         className="color-trigger"
         onClick={() => setColorPickerOpen(!colorPickerOpen)}

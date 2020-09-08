@@ -13,18 +13,18 @@ export default function Home(props) {
   const [quantity, setQuantity] = React.useState(5);
   const [margin, setMargin] = React.useState(8);
 
-  const [width, setWidth] = React.useState(10);
-  const [height, setHeight] = React.useState(10);
+  const [width, setWidth] = React.useState(20);
+  const [height, setHeight] = React.useState(20);
   const [opacity, setOpacity] = React.useState(1);
   const [radius, setRadius] = React.useState(0);
 
-  const [scaleMin, setScaleMin] = React.useState(0);
+  const [scaleMin, setScaleMin] = React.useState(0.2);
   const [scaleMax, setScaleMax] = React.useState(1);
   const [rotation, setRotation] = React.useState(360);
   const [color, setColor] = React.useState("#F35C98");
 
   const [duration, setDuration] = React.useState(1);
-  const [delay, setDelay] = React.useState(0.1);
+  const [delay, setDelay] = React.useState(0.2);
   const [ease, setEase] = React.useState("anticipate");
 
   return (
@@ -32,7 +32,6 @@ export default function Home(props) {
       <div className="container-left">
         <Head>
           <title>Loader generator</title>
-          <link rel="icon" href="/favicon.ico" />
         </Head>
 
         <h1 className="title">

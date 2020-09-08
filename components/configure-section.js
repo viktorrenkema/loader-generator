@@ -5,6 +5,7 @@ import Preview from "./preview";
 import TerminalCommand from "./terminal-command";
 import TransitionForm from "./transition-form";
 import StyleForm from "./style-form";
+import { generateCodeSnippet } from "../lib/generateCodeSnippet";
 
 export default function ConfigureSection(props) {
   const {
@@ -117,7 +118,21 @@ export default function ConfigureSection(props) {
       <motion.div className="snippet">
         <CodeBlock
           showLineNumbers={true}
-          text={`import * as React from \"react\";\r\nimport { motion } from \"framer-motion\";\r\n\r\n\/\/ Discover the full API: https:\/\/www.framer.com\/api\/motion\r\n\r\nexport  function Component(props) {\r\n    const dot = {\r\n      width: ${width},\r\n      height: ${height},\r\n      opacity: ${opacity},\r\n      margin: ${margin},\r\n      borderRadius: ${radius},\r\n      display: \"inline-block\",\r\n      background: ${color},\r\n    }\r\n  \r\n  \r\n    const variants = {\r\n      show: {\r\n        scale: ${scaleMax},\r\n        rotate: 0,\r\n      },\r\n      hide: {\r\n        scale: ${scaleMin},\r\n        rotate: ${rotation},\r\n      },\r\n    }\r\n  \r\n    const transition = {\r\n      yoyo: Infinity,\r\n      ease: ${ease},\r\n      duration: ${duration},\r\n      delay: ${delay},\r\n    }\r\n\r\n    return (\r\n            <motion.div>\r\n              <\/motion.div>                     \r\n)\r\n      }`}
+          text={generateCodeSnippet({
+            delay,
+            radius,
+            margin,
+            duration,
+            width,
+            height,
+            color,
+            opacity,
+            scaleMin,
+            scaleMax,
+            ease,
+            rotation,
+            quantity,
+          })}
         ></CodeBlock>
       </motion.div>
     </motion.div>

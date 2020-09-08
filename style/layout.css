@@ -3,20 +3,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap");
 
-/* 
-var(accent-1, #f35c98)
- */
-
-/* 
-var(accent-2, #f99576)
- */
-
-/* 
-var(accent-3, #fcca49)
- */
+:root {
+  --main-bg-color: #1e1f23;
+  --accent-1-pink: #f35c98;
+  --accent-2-orange: #f99576;
+  --accent-3-yellow: #fcca49;
+}
 
 html,
 body {
+  background: var(--main-bg-color);
   padding: 0;
   margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -63,7 +59,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: #1e1f23;
+  background: var(--main-bg-color);
   padding: 5rem 5rem;
   flex: 1;
   margin-right: 30vw;
@@ -135,7 +131,7 @@ ul {
 .wrap-configure-form {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -154,9 +150,12 @@ ul {
   background: #131417;
   border-radius: 10px;
   padding: 20px 20px;
-  margin-right: 40px;
-  align-items: start;
+  align-items: flex-start;
   height: 220px;
+}
+
+.wrap-configure-form > div:nth-child(1) {
+  margin-right: 40px;
 }
 
 footer {
@@ -248,7 +247,7 @@ select {
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
-  background: #1e1f23;
+  background: var(--main-bg-color);
   color: var(--Subtext, #dedede);
   font-size: 14px;
   border-radius: 5px;
@@ -258,7 +257,7 @@ select {
 
 input[type="number"]:focus,
 select:focus {
-  border: 1px solid #f35c98;
+  border: 1px solid var(--accent-1-pink);
   outline: none;
 }
 
@@ -285,7 +284,7 @@ span::selection,
 div::selection,
 h1::selection,
 h2::selection {
-  background: #f35c98;
+  background: var(--accent-1-pink);
   color: white;
 }
 
@@ -347,7 +346,7 @@ input[type="number"] {
   width: 60px;
   padding: 5px;
   margin: 5px 0px 5px 10px;
-  background: #1e1f23;
+  background: var(--main-bg-color);
 }
 
 .hex-text {
@@ -425,7 +424,7 @@ select {
 }
 
 .headerone {
-  color: var(--Accent1, #f35c98);
+  color: var(--accent-1-pink);
   display: inline-block;
   font-size: 28px;
   letter-spacing: 0px;
@@ -434,7 +433,7 @@ select {
 }
 
 .headertwo {
-  color: #f99576;
+  color: var(--accent-2-orange);
   display: inline-block;
   font-size: 28px;
   letter-spacing: 0px;
@@ -443,7 +442,7 @@ select {
 }
 
 .headerthree {
-  color: #fcca49;
+  color: var(--accent-3-yellow);
   display: inline-block;
   font-size: 28px;
   letter-spacing: 0px;
@@ -486,9 +485,9 @@ input[type="checkbox"] {
 
 /* 0. GENERAL */
 .wrapper-label {
-  background: var(--Accent1, #f35c98);
+  background: var(--accent-1-pink);
   border-radius: 7px;
-  border: 3px solid #1e1f23;
+  border: 3px solid var(--main-bg-color);
   width: 55px;
   display: flex;
   justify-content: center;
@@ -505,6 +504,7 @@ input[type="checkbox"] {
   font-size: 12px;
   letter-spacing: 0px;
   padding: 4px;
+  padding-top: 8px;
   margin: 0px;
   line-height: 1.2;
   font-weight: 600;
@@ -531,7 +531,8 @@ input[type="checkbox"] {
 .dependency-command {
   width: 300px;
   padding: 10px;
-  background-color: #1e1f23;
+  font-size: 14px;
+  background-color: var(--main-bg-color);
   font-family: "Source Code Pro", serif;
   color: var(--Subtext, #dedede);
   border-radius: 4px;
@@ -554,13 +555,9 @@ input[type="checkbox"] {
   margin-right: 40px;
 }
 
-.dependency-command::selection {
-  background: #f99576;
-}
-
 .wrap-npm-command {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -578,4 +575,12 @@ input[type="checkbox"] {
 
 .snippet > div > span {
   border-radius: 10px !important;
+}
+
+.guBPrX,
+.bwlhnB {
+  border: none !important;
+  margin-top: 1rem !important;
+  margin-right: 1rem !important;
+  padding: 0.5rem !important;
 }

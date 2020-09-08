@@ -9,7 +9,7 @@ export default function Checkbox(props) {
   //   const handleChange = React.useCallback((e) => onChange(!checked), [onChange]);
   return (
     <div className="wrap-labelinput">
-      <label for={label}>
+      <label htmlFor={label}>
         {props.label.charAt(0).toUpperCase() + props.label.slice(1)}
       </label>
       <input
