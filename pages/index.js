@@ -97,7 +97,7 @@ export default function Home(props) {
         {/*                                               */}
         {/* display components if certain state is active */}
         {/*                                               */}
-        <div style={{ display: "flex", flexDirection: "row" }}>
+        <div className="wrapper-content">
           {tab == 1 && (
             <ConfigureSection
               color={color}

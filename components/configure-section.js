@@ -42,7 +42,7 @@ export default function ConfigureSection(props) {
   } = props;
 
   return (
-    <motion.div style={{ display: "flex", flexDirection: "column" }}>
+    <motion.div className="three-sections">
       <h1 className="headerblank">
         <span className="headerone">1.</span> Configure
       </h1>

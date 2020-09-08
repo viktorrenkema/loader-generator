@@ -13,7 +13,7 @@ export default function TransitionForm(props) {
   } = props;
 
   return (
-    <motion.div className="configure-section">
+    <motion.div className={"configure-section transition"}>
       <div className="wrap-configure-input">
         <NumberInput
           label="Duration"

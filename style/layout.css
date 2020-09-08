@@ -142,6 +142,7 @@ ul {
   align-items: center;
   overflow: visible;
   margin-right: 40px;
+  height: 100%;
 }
 
 .configure-section {
@@ -150,12 +151,12 @@ ul {
   background: #131417;
   border-radius: 10px;
   padding: 20px 20px;
-  align-items: flex-start;
-  height: 220px;
+  align-items: start;
+  justify-content: center;
 }
 
-.wrap-configure-form > div:nth-child(1) {
-  margin-right: 40px;
+.transition {
+  height: -webkit-fill-available;
 }
 
 footer {
@@ -484,6 +485,18 @@ input[type="checkbox"] {
 }
 
 /* 0. GENERAL */
+.wrapper-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.three-sections {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .wrapper-label {
   background: var(--accent-1-pink);
   border-radius: 7px;
@@ -516,6 +529,15 @@ input[type="checkbox"] {
   position: relative;
   margin-left: -50px;
   font-size: 12px;
+}
+
+.configure-section {
+  width: 33%;
+}
+
+.wrap-configure-form > div:nth-child(1) {
+  margin-right: 40px;
+  width: 66% !important;
 }
 
 /* 2. INSTALLATION SECTION */
