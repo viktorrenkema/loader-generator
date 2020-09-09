@@ -512,19 +512,21 @@ input[type="checkbox"] {
 .beta-text {
   font-family: "Kufam", serif;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 0px;
   padding: 2px;
-  padding-top: 8px;
+  padding-top: 5px;
   margin: 0px;
   line-height: 1.2;
   font-weight: 600;
   font-style: normal;
 }
 
-.container-left > ul > li:nth-child(2) {
-  pointer-events: none;
-  /* block user from selecting the circular loader */
+.experimental-banner {
+  padding: 20px;
+  border-radius: 10px;
+  background: #f35c981c;
+  text-align: center;
 }
 
 /* 1. FORMS */
@@ -626,6 +628,7 @@ input[type="checkbox"] {
 }
 
 /* RESPONSIVENESS */
+
 @media (max-width: 1024px) {
   .container-left {
     padding: 3rem 2rem;
@@ -716,5 +719,11 @@ input[type="checkbox"] {
   li {
     font-size: 12px;
     padding: 8px;
+  }
+}
+
+@media (max-width: 425px) {
+  .title {
+    font-size: 27px;
   }
 }

@@ -138,81 +138,51 @@ export default function Home(props) {
               setRepeatType={setRepeatType}
             ></ConfigureSection>
           )}
-          {tab == 2 && (
-            <ConfigureSection
-              color={color}
-              setColor={setColor}
-              quantity={quantity}
-              radius={radius}
-              margin={margin}
-              width={width}
-              height={height}
-              opacity={opacity}
-              scaleMin={scaleMin}
-              scaleMax={scaleMax}
-              rotation={rotation}
-              experimental={experimental}
-              setQuantity={setQuantity}
-              setRadius={setRadius}
-              setMargin={setMargin}
-              setWidth={setWidth}
-              setHeight={setHeight}
-              setOpacity={setOpacity}
-              setScaleMin={setScaleMin}
-              setScaleMax={setScaleMax}
-              setRotation={setRotation}
-              setExperimental={setExperimental}
-              render={render}
-              startRender={startRender}
-              duration={duration}
-              setDuration={setDuration}
-              setDelay={setDelay}
-              ease={ease}
-              setEase={setEase}
-              delay={delay}
-              render={render}
-              startRender={startRender}
-              repeatType={repeatType}
-              setRepeatType={setRepeatType}
-            ></ConfigureSection>
-          )}{" "}
+
           {tab == 3 && (
-            <ConfigureSection
-              color={color}
-              setColor={setColor}
-              quantity={quantity}
-              radius={radius}
-              margin={margin}
-              width={width}
-              height={height}
-              opacity={opacity}
-              scaleMin={scaleMin}
-              scaleMax={scaleMax}
-              rotation={rotation}
-              experimental={experimental}
-              setQuantity={setQuantity}
-              setRadius={setRadius}
-              setMargin={setMargin}
-              setWidth={setWidth}
-              setHeight={setHeight}
-              setOpacity={setOpacity}
-              setScaleMin={setScaleMin}
-              setScaleMax={setScaleMax}
-              setRotation={setRotation}
-              setExperimental={setExperimental}
-              render={render}
-              startRender={startRender}
-              duration={duration}
-              setDuration={setDuration}
-              setDelay={setDelay}
-              ease={ease}
-              setEase={setEase}
-              delay={delay}
-              render={render}
-              startRender={startRender}
-              repeatType={repeatType}
-              setRepeatType={setRepeatType}
-            ></ConfigureSection>
+            <div>
+              <p className="experimental-banner">
+                <i>Experimental</i> is under development and meant as a
+                playground to explore different types of loaders. Code
+                generation is not yet supported.
+              </p>
+              <ConfigureSection
+                color={color}
+                setColor={setColor}
+                quantity={quantity}
+                radius={radius}
+                margin={margin}
+                width={width}
+                height={height}
+                opacity={opacity}
+                scaleMin={scaleMin}
+                scaleMax={scaleMax}
+                rotation={rotation}
+                experimental={experimental}
+                setQuantity={setQuantity}
+                setRadius={setRadius}
+                setMargin={setMargin}
+                setWidth={setWidth}
+                setHeight={setHeight}
+                setOpacity={setOpacity}
+                setScaleMin={setScaleMin}
+                setScaleMax={setScaleMax}
+                setRotation={setRotation}
+                setExperimental={setExperimental}
+                render={render}
+                startRender={startRender}
+                duration={duration}
+                setDuration={setDuration}
+                setDelay={setDelay}
+                ease={ease}
+                setEase={setEase}
+                delay={delay}
+                render={render}
+                startRender={startRender}
+                repeatType={repeatType}
+                setRepeatType={setRepeatType}
+              ></ConfigureSection>
+            </div>
           )}
         </div>
       </div>

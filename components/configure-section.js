@@ -1,7 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import CodeBlock from "./codeblock";
-import Preview from "./preview";
 import TerminalCommand from "./terminal-command";
 import TransitionForm from "./transition-form";
 import StyleForm from "./style-form";
@@ -46,7 +45,7 @@ export default function ConfigureSection(props) {
   return (
     <motion.div className="three-sections">
       <h1 className="headerblank">
-        <span className="headerone">1.</span> Configure
+        <span className="headerone">1.</span> Configure style & transition
       </h1>
       <motion.div className="wrap-configure-form">
         <StyleForm
@@ -89,7 +88,7 @@ export default function ConfigureSection(props) {
         ></TransitionForm>
       </motion.div>
       <h1 className="headerblank">
-        <span className="headertwo">2.</span> Install
+        <span className="headertwo">2.</span> Install dependency
       </h1>
       <motion.div className="wrap-installation">
         <p className="installation-text">
@@ -99,11 +98,11 @@ export default function ConfigureSection(props) {
           </a>
           , an open-source production-ready animation library for React.
           <br></br>
-          <br></br>Just install the{" "}
+          <br></br>Simply install the{" "}
           <a href="https://www.npmjs.com/package/framer-motion" target="_blank">
             npm package
           </a>{" "}
-          into your React app to bring your Loader’s code into your project:
+          into your React app and bring your Loader into your project:
         </p>
         <br></br>
         <TerminalCommand
@@ -117,7 +116,7 @@ export default function ConfigureSection(props) {
       </motion.div>
 
       <h1 className="headerblank">
-        <span className="headerthree">3.</span> Copy/paste
+        <span className="headerthree">3.</span> Copy/paste code
       </h1>
       <motion.div className="snippet">
         <CodeBlock
