@@ -145,16 +145,6 @@ ul {
   height: 100%;
 }
 
-.configure-section {
-  display: flex;
-  flex-direction: row;
-  background: #131417;
-  border-radius: 10px;
-  padding: 20px 20px;
-  align-items: start;
-  justify-content: center;
-}
-
 footer {
   width: 100%;
   height: 100px;
@@ -312,7 +302,8 @@ input[type="number"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  min-width: 210px;
+  padding: 0px 20px;
 }
 
 .form-style,
@@ -417,7 +408,7 @@ select {
   color: "white";
   font-size: 22px;
   font-weight: 500;
-  margin-top: 6rem;
+  margin-top: 4rem;
 }
 
 .headerone {
@@ -495,6 +486,7 @@ input[type="checkbox"] {
   font-size: 8px;
   font-family: "Kufam", serif;
   color: #929292;
+  letter-spacing: 0.3px;
 }
 
 .three-sections {
@@ -543,7 +535,28 @@ input[type="checkbox"] {
 }
 
 .configure-section {
+  /* width: 100%; */
+  max-width: 640px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  background: #131417;
+  border-radius: 10px;
+  padding: 20px 20px;
+  align-items: start;
+  justify-content: center;
+}
+
+.transition {
+  width: 100% !important;
+  max-width: unset;
+}
+.style-background {
+  background: #141518;
   width: 100%;
+  border-radius: 10px;
+  justify-content: center;
+  display: flex;
 }
 
 /* 2. INSTALLATION SECTION */
@@ -616,14 +629,15 @@ input[type="checkbox"] {
 /* RESPONSIVENESS */
 @media (max-width: 1024px) {
   .container-left {
-    padding: 5rem 2rem;
+    padding: 3rem 2rem;
     margin-bottom: 20vw;
     width: 100%;
     margin-right: 0vw;
   }
 
   .container-right {
-    height: 20vw;
+    height: 25vw;
+    min-height: 120px;
     width: 100%;
     bottom: 0;
     top: unset;
@@ -650,7 +664,6 @@ input[type="checkbox"] {
   .transition {
     height: unset;
     width: 100%;
-    margin-right: 40px;
   }
   ul {
     margin: 0;
@@ -658,8 +671,14 @@ input[type="checkbox"] {
   }
 }
 
+/* Up to Tablets */
+
+@media (max-width: 768px) {
+}
+
+/* up to Large phones */
 @media (max-width: 425px) {
-  .configure-section {
+  /* .configure-section {
     padding: 20px 0px;
     margin-right: 0px !important;
     flex-direction: column;
@@ -667,11 +686,11 @@ input[type="checkbox"] {
   }
 
   .wrap-labelinput {
-    min-width: 175px;
+    min-width: 200px;
   }
   .wrap-configure-input {
     margin-right: 0px;
-  }
+  } */
 
   .dependency-command {
     font-size: 12px;
@@ -694,7 +713,6 @@ input[type="checkbox"] {
     font-size: 12px;
     padding-top: 5px;
   }
-
   li {
     font-size: 12px;
     padding: 8px;
