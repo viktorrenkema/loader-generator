@@ -32,8 +32,8 @@ export default function StyleForm(props) {
   } = props;
 
   return (
-    <motion.div className="configure-section">
-      <div className="wrap-configure-input">
+    <motion.div className="style-background">
+      <motion.div className="configure-section">
         <NumberInput
           label="Quantity"
           onChange={setQuantity}
@@ -57,8 +57,7 @@ export default function StyleForm(props) {
           onChange={setHeight}
           value={height}
         ></NumberInput>
-      </div>
-      <div className="wrap-configure-input">
+
         <NumberInput
           label="Opacity"
           onChange={setOpacity}
@@ -89,8 +88,7 @@ export default function StyleForm(props) {
           onFocus={startRender}
           onBlur={startRender}
         ></NumberInput>
-      </div>
-      <div className="wrap-configure-input">
+
         <NumberInput
           label="Rotation"
           onChange={setRotation}
@@ -105,7 +103,7 @@ export default function StyleForm(props) {
           onChange={setExperimental}
           checked={experimental}
         ></Checkbox> */}
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
