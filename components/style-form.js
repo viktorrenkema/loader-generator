@@ -47,8 +47,6 @@ export default function StyleForm(props) {
           tooltip={"Distance between dots"}
           unit={"px"}
         ></NumberInput>
-      </div>
-      <div className="wrap-configure-input">
         <NumberInput
           label="Width"
           onChange={setWidth}
@@ -59,6 +57,8 @@ export default function StyleForm(props) {
           onChange={setHeight}
           value={height}
         ></NumberInput>
+      </div>
+      <div className="wrap-configure-input">
         <NumberInput
           label="Opacity"
           onChange={setOpacity}
@@ -71,8 +71,6 @@ export default function StyleForm(props) {
           value={radius}
           tooltip={"Sets rounding of corners"}
         ></NumberInput>
-      </div>
-      <div className="wrap-configure-input">
         <NumberInput
           label="Scale start"
           onChange={setScaleMin}
@@ -91,6 +89,8 @@ export default function StyleForm(props) {
           onFocus={startRender}
           onBlur={startRender}
         ></NumberInput>
+      </div>
+      <div className="wrap-configure-input">
         <NumberInput
           label="Rotation"
           onChange={setRotation}
