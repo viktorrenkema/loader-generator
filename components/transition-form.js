@@ -66,7 +66,7 @@ export default function TransitionForm(props) {
           </select>
         </div>
         <div className="wrap-labelinput">
-          <label htmlFor="repeat">Repeat Type</label>
+          <label htmlFor="repeat">Repeat type</label>
           <select
             id="repeat"
             name="repeat"

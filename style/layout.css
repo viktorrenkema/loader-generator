@@ -130,7 +130,7 @@ ul {
 
 .wrap-configure-form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
@@ -153,10 +153,6 @@ ul {
   padding: 20px 20px;
   align-items: start;
   justify-content: center;
-}
-
-.transition {
-  height: -webkit-fill-available;
 }
 
 footer {
@@ -242,7 +238,7 @@ label {
 }
 input[type="number"],
 select {
-  width: 60px;
+  width: 80px;
   padding: 5px;
   margin: 5px 0px 5px 15px;
   display: inline-block;
@@ -339,12 +335,12 @@ input[type="number"] {
 }
 
 .color-trigger {
+  width: 80px;
   height: 28px;
   display: inline-block;
   box-sizing: border-box;
   border-radius: 4px;
   cursor: pointer;
-  width: 60px;
   padding: 5px;
   margin: 5px 0px 5px 10px;
   background: var(--main-bg-color);
@@ -352,7 +348,7 @@ input[type="number"] {
 
 .hex-text {
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   padding: 0;
   margin: 0;
   font-weight: 600;
@@ -362,7 +358,7 @@ input[type="number"] {
   font-family: "Inter", sans-serif;
   color: var(--Subtext, #dedede);
   font-size: 14px;
-  line-height: 1.2;
+  line-height: 1.6;
   font-weight: 400;
 }
 
@@ -484,11 +480,21 @@ input[type="checkbox"] {
   margin: 8px 0;
 }
 
+.wrap-configure-form > div:nth-child(1) {
+  margin-bottom: 40px;
+}
+
 /* 0. GENERAL */
 .wrapper-content {
   width: 100%;
   display: flex;
   flex-direction: row;
+}
+
+.soon-span {
+  font-size: 8px;
+  font-family: "Kufam", serif;
+  color: #929292;
 }
 
 .three-sections {
@@ -507,21 +513,26 @@ input[type="checkbox"] {
   align-items: center;
   position: relative;
   float: right;
-  left: -40px;
-  bottom: 5px;
+  left: 153px;
+  bottom: -18px;
 }
 
 .beta-text {
   font-family: "Kufam", serif;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0px;
-  padding: 4px;
+  padding: 2px;
   padding-top: 8px;
   margin: 0px;
   line-height: 1.2;
   font-weight: 600;
   font-style: normal;
+}
+
+.container-left > ul > li:nth-child(2) {
+  pointer-events: none;
+  /* block user from selecting the circular loader */
 }
 
 /* 1. FORMS */
@@ -532,12 +543,7 @@ input[type="checkbox"] {
 }
 
 .configure-section {
-  width: 33%;
-}
-
-.wrap-configure-form > div:nth-child(1) {
-  margin-right: 40px;
-  width: 66% !important;
+  width: 100%;
 }
 
 /* 2. INSTALLATION SECTION */
@@ -605,4 +611,92 @@ input[type="checkbox"] {
   margin-top: 1rem !important;
   margin-right: 1rem !important;
   padding: 0.5rem !important;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+  .container-left {
+    padding: 5rem 2rem;
+    margin-bottom: 20vw;
+    width: 100%;
+    margin-right: 0vw;
+  }
+
+  .container-right {
+    height: 20vw;
+    width: 100%;
+    bottom: 0;
+    top: unset;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 16px;
+    width: 80%;
+  }
+
+  .wrap-configure-form {
+    flex-wrap: wrap;
+  }
+
+  .wrap-configure-form > div:nth-child(1) {
+    width: 100% !important;
+    margin-bottom: 40px;
+  }
+
+  .transition {
+    height: unset;
+    width: 100%;
+    margin-right: 40px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .configure-section {
+    padding: 20px 0px;
+    margin-right: 0px !important;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wrap-labelinput {
+    min-width: 175px;
+  }
+  .wrap-configure-input {
+    margin-right: 0px;
+  }
+
+  .dependency-command {
+    font-size: 12px;
+  }
+  .yarnnpm {
+    font-size: 14px;
+    margin-right: 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .wrapper-label {
+    width: 45px;
+    left: 122px;
+    bottom: -13px;
+  }
+  .beta-text {
+    font-size: 12px;
+    padding-top: 5px;
+  }
+
+  li {
+    font-size: 12px;
+    padding: 8px;
+  }
 }

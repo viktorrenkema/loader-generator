@@ -3,6 +3,7 @@ import { motion, AnimateSharedLayout } from "framer-motion";
 import Preview from "../components/preview";
 import BetaLabel from "../components/beta-label";
 import ConfigureSection from "../components/configure-section";
+import SetViewport from "../data/calculateWindow";
 
 export default function Home(props) {
   const [tab, setCurrentTab] = React.useState(1);
@@ -27,24 +28,24 @@ export default function Home(props) {
   const [delay, setDelay] = React.useState(0.2);
   const [ease, setEase] = React.useState("anticipate");
   const [repeatType, setRepeatType] = React.useState("reverse");
-
+  SetViewport();
   return (
     <div className="container">
       <div className="container-left">
         <Head>
           <title>Loader generator</title>
         </Head>
-
-        <h1 className="title">
-          Loader generator<BetaLabel></BetaLabel>
-        </h1>
+        <BetaLabel></BetaLabel>
+        <h1 className="title">Loader generator</h1>
 
         <p className="description">
           Customize your loader, install Motion in your React app, and
           copy-paste the generated code.
         </p>
         <ul>
-          <AnimateSharedLayout transition={{ duration: 0.5 }}>
+          <AnimateSharedLayout
+            transition={{ duration: 0.5, ease: "anticipate" }}
+          >
             <motion.li
               onClick={() => (setCurrentTab(1), setExperimental(false))}
             >
@@ -64,7 +65,7 @@ export default function Home(props) {
             <motion.li
               onClick={() => (setCurrentTab(2), setExperimental(false))}
             >
-              Circular{" "}
+              Circular <span className="soon-span">soon</span>
               {tab === 2 && (
                 <motion.div
                   layoutId="underline"
