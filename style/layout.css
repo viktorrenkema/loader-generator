@@ -132,7 +132,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: start;
 }
 
 .wrap-configure-input {
@@ -505,7 +505,7 @@ input[type="checkbox"] {
   align-items: center;
   position: relative;
   float: right;
-  left: 153px;
+  left: 219px;
   bottom: -18px;
 }
 
@@ -536,7 +536,7 @@ input[type="checkbox"] {
 
 .configure-section {
   /* width: 100%; */
-  max-width: 640px;
+  max-width: 460px;
   flex-wrap: wrap;
   display: flex;
   flex-direction: row;
@@ -544,18 +544,16 @@ input[type="checkbox"] {
   border-radius: 10px;
   padding: 20px 20px;
   align-items: start;
-  justify-content: center;
+  justify-content: start;
 }
 
 .transition {
-  width: 100% !important;
   max-width: unset;
 }
 .style-background {
   background: #141518;
-  width: 100%;
   border-radius: 10px;
-  justify-content: center;
+  justify-content: start;
   display: flex;
 }
 
@@ -567,6 +565,7 @@ input[type="checkbox"] {
   padding: 2rem;
   border-radius: 10px;
   background-color: #131417;
+  max-width: 700px;
 }
 
 .dependency-command {
@@ -656,15 +655,6 @@ input[type="checkbox"] {
     flex-wrap: wrap;
   }
 
-  .wrap-configure-form > div:nth-child(1) {
-    width: 100% !important;
-    margin-bottom: 40px;
-  }
-
-  .transition {
-    height: unset;
-    width: 100%;
-  }
   ul {
     margin: 0;
     padding: 0;
@@ -676,21 +666,31 @@ input[type="checkbox"] {
 @media (max-width: 768px) {
 }
 
+@media (min-width: 1300px) {
+  .wrap-configure-form {
+    flex-direction: row;
+  }
+  .style-background {
+    margin-right: 40px;
+  }
+}
+@media (max-width: 524px) {
+  .configure-section {
+    width: min-content;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper-label {
+    left: 163px;
+  }
+}
+
 /* up to Large phones */
 @media (max-width: 425px) {
-  /* .configure-section {
-    padding: 20px 0px;
-    margin-right: 0px !important;
-    flex-direction: column;
-    align-items: center;
+  .configure-section {
+    justify-content: center;
   }
-
-  .wrap-labelinput {
-    min-width: 200px;
-  }
-  .wrap-configure-input {
-    margin-right: 0px;
-  } */
 
   .dependency-command {
     font-size: 12px;
