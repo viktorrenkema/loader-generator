@@ -34,6 +34,26 @@ export default function Home(props) {
       <div className="container-left">
         <Head>
           <title>Loader generator</title>
+          <meta
+            name="description"
+            content="Create your own Loaders and generate production-ready code to use in your React apps."
+          />
+          {/* <meta
+            property="twitter:description"
+            content="Psychologist by trade, now learning all about design and web development."
+          /> */}
+          <meta
+            property="og:image"
+            content="https://i.ibb.co/CVqpHwz/groningen-7c27d7ef5c8875bad11adbda35810d08.jpg"
+          />
+          <meta property="og:url" content="http://renkema.com" />
+          {
+            <link
+              rel="icon"
+              type="image/png"
+              href="https://i.ibb.co/LzQpxdL/loader-fav.png"
+            />
+          }
         </Head>
         <BetaLabel></BetaLabel>
         <h1 className="title">Loader generator</h1>

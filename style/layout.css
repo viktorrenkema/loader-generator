@@ -529,6 +529,10 @@ input[type="checkbox"] {
   text-align: center;
 }
 
+.sketch-picker {
+  position: absolute !important;
+}
+
 /* 1. FORMS */
 .unit {
   position: relative;
