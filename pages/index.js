@@ -96,7 +96,7 @@ export default function Home(props) {
                 ></motion.div>
               )}
             </motion.li>
-            <motion.li
+            {/* <motion.li
               onClick={() => (setCurrentTab(2), setExperimental(false))}
             >
               Circular <span className="soon-span">soon</span>
@@ -111,7 +111,7 @@ export default function Home(props) {
                   }}
                 ></motion.div>
               )}
-            </motion.li>
+            </motion.li> */}
             <motion.li
               onClick={() => (setCurrentTab(3), setExperimental(true))}
             >
@@ -175,11 +175,19 @@ export default function Home(props) {
 
           {tab == 3 && (
             <div>
-              <p className="experimental-banner">
-                Experimental is under development and meant as a playground to
-                explore different types of loaders. Code generation is not yet
-                supported.
-              </p>
+              <div className="toast">
+                <div className="toast-svg">
+                  <ExclamationMark></ExclamationMark>
+                </div>
+                <div className="toast-text">
+                  <p className="toast-h1">Heads up!</p>
+                  <p className="toast-h2">
+                    Experimental is under development and only meant as a
+                    playground to explore funky animations. No code is
+                    generated.
+                  </p>
+                </div>
+              </div>
               <ConfigureSection
                 color={color}
                 setColor={setColor}
@@ -242,5 +250,17 @@ export default function Home(props) {
         ></Preview>
       </div>
     </div>
+  );
+}
+
+function ExclamationMark() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="30">
+      <path
+        d="M 11 17 L 13 17 L 13 11 L 11 11 Z M 12 20 C 11.448 20 11 19.552 11 19 C 11 18.448 11.448 18 12 18 C 12.552 18 13 18.448 13 19 C 13 19.552 12.552 20 12 20 Z M 18 6 L 6 6 C 4.343 6 3 7.343 3 9 L 3 21 C 3 22.657 4.343 24 6 24 L 18 24 C 19.657 24 21 22.657 21 21 L 21 9 C 21 7.343 19.657 6 18 6 Z"
+        fill="rgb(0,0,0)"
+      ></path>
+      <path d="M 11 11 L 13 11 L 13 17 L 11 17 Z" fill="#f35c98"></path>
+    </svg>
   );
 }
