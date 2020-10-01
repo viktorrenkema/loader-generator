@@ -38,10 +38,24 @@ export default function Home(props) {
             name="description"
             content="Create your own Loaders and generate production-ready code to use in your React apps."
           />
-          {/* <meta
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="@vrenkema" />
+          <meta
+            name="twitter:title"
+            content="Small Island Developing States Photo Submission"
+          />
+          <meta
+            name="twitter:description"
+            content="View the album on Flickr."
+          />
+          <meta
+            name="twitter:image"
+            content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg"
+          />
+          <meta
             property="twitter:description"
             content="Psychologist by trade, now learning all about design and web development."
-          /> */}
+          />
           <meta
             property="og:image"
             content="https://i.ibb.co/CVqpHwz/groningen-7c27d7ef5c8875bad11adbda35810d08.jpg"
