@@ -50,15 +50,15 @@ export default function Home(props) {
           />
           <meta
             name="twitter:image"
-            content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg"
+            content="https://i.ibb.co/cxJwZKN/loadercard.png"
           />
           <meta
             property="twitter:description"
-            content="Psychologist by trade, now learning all about design and web development."
+            content="Create your own Loaders with custom easings and bring the generated code into production right away."
           />
           <meta
             property="og:image"
-            content="https://i.ibb.co/CVqpHwz/groningen-7c27d7ef5c8875bad11adbda35810d08.jpg"
+            content="https://i.ibb.co/cxJwZKN/loadercard.png"
           />
           <meta property="og:url" content="http://renkema.com" />
           {
@@ -176,9 +176,9 @@ export default function Home(props) {
           {tab == 3 && (
             <div>
               <p className="experimental-banner">
-                <i>Experimental</i> is under development and meant as a
-                playground to explore different types of loaders. Code
-                generation is not yet supported.
+                Experimental is under development and meant as a playground to
+                explore different types of loaders. Code generation is not yet
+                supported.
               </p>
               <ConfigureSection
                 color={color}
