@@ -41,12 +41,14 @@ export default function ConfigureSection(props) {
     delay,
     repeatType,
     setRepeatType,
+    colorPickerOpen,
+    setColorPickerOpen,
   } = props;
 
   return (
     <motion.div className="three-sections">
       <h1 className="headerblank">
-        <span className="headerone">1.</span> Configure style & transition
+        <span className="headerone">1.</span> Customize style & transition
       </h1>
       <motion.div className="wrap-configure-form">
         <StyleForm
@@ -74,6 +76,8 @@ export default function ConfigureSection(props) {
           setExperimental={setExperimental}
           render={render}
           startRender={startRender}
+          colorPickerOpen={colorPickerOpen}
+          setColorPickerOpen={setColorPickerOpen}
         ></StyleForm>
         <TransitionForm
           duration={duration}
@@ -117,7 +121,7 @@ export default function ConfigureSection(props) {
       </motion.div>
 
       <h1 className="headerblank">
-        <span className="headerthree">3.</span> Copy/paste code
+        <span className="headerthree">3.</span> Copy/paste your code
       </h1>
       <motion.div className="snippet">
         <CodeBlock

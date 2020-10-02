@@ -8,7 +8,7 @@ export default function Dot(props) {
     opacity: props.opacity,
     margin: `${props.margin}px`,
     borderRadius: `${props.radius}px`,
-    background: props.color ? `${props.color}` : "#F35C98",
+    background: props.color ? `${props.color}` : "#c81c60",
     display: "inline-block",
     transform: "translateZ(42px)",
     perspective: "20px",

@@ -29,6 +29,8 @@ export default function StyleForm(props) {
     setRotation,
     setExperimental,
     startRender,
+    colorPickerOpen,
+    setColorPickerOpen,
   } = props;
 
   return (
@@ -53,16 +55,15 @@ export default function StyleForm(props) {
           value={width}
         ></NumberInput>
         <NumberInput
-          label="Height"
-          onChange={setHeight}
-          value={height}
-        ></NumberInput>
-
-        <NumberInput
           label="Opacity"
           onChange={setOpacity}
           value={opacity}
           tooltip={"Sets transparancy"}
+        ></NumberInput>
+        <NumberInput
+          label="Height"
+          onChange={setHeight}
+          value={height}
         ></NumberInput>
         <NumberInput
           label="Radius"
@@ -80,6 +81,14 @@ export default function StyleForm(props) {
           onBlur={startRender}
         ></NumberInput>
         <NumberInput
+          label="Rotation"
+          onChange={setRotation}
+          value={rotation}
+          onFocus={startRender}
+          onBlur={startRender}
+          onKeyPress={startRender}
+        ></NumberInput>
+        <NumberInput
           label="Scale end"
           onChange={setScaleMax}
           value={scaleMax}
@@ -88,16 +97,12 @@ export default function StyleForm(props) {
           onFocus={startRender}
           onBlur={startRender}
         ></NumberInput>
-
-        <NumberInput
-          label="Rotation"
-          onChange={setRotation}
-          value={rotation}
-          onFocus={startRender}
-          onBlur={startRender}
-          onKeyPress={startRender}
-        ></NumberInput>
-        <ColorInput color={color} setColor={setColor}></ColorInput>
+        <ColorInput
+          color={color}
+          setColor={setColor}
+          colorPickerOpen={colorPickerOpen}
+          setColorPickerOpen={setColorPickerOpen}
+        ></ColorInput>
         {/* <Checkbox
           label={"experimental"}
           onChange={setExperimental}

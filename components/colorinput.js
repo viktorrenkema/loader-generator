@@ -4,9 +4,15 @@ import { SketchPicker, BlockPicker } from "react-color";
 
 export default function ColorInput(props) {
   const [colorFocus, setColorFocus] = React.useState(false);
-  const [colorPickerOpen, setColorPickerOpen] = React.useState(false);
+  // const [colorPickerOpen, setColorPickerOpen] = React.useState(false);
 
-  const { color, setColor, onChange } = props;
+  const {
+    color,
+    setColor,
+    onChange,
+    colorPickerOpen,
+    setColorPickerOpen,
+  } = props;
   let uppercolor = color.toUpperCase();
 
   const variants = {
@@ -26,19 +32,28 @@ export default function ColorInput(props) {
   //   onChangeComplete,
   // ]);
 
-  const handleChange = React.useCallback((e) => onChange(e.target.value), [
-    onChange,
-  ]);
+  const handleClick = () => (
+    setColorPickerOpen(!colorPickerOpen), console.log("Opened")
+  );
+  const handleKeepOpen = (e) => (
+    setColorPickerOpen(true), e.stopPropagation(), console.log("Keeping open")
+  );
 
-  const [focus, setFocus] = React.useState(false);
+  const handleClose = () => (
+    setColorPickerOpen(!colorPickerOpen), console.log("Closed")
+  );
+
+  const handleChange = (color) => {
+    setColor(color.hex), setColorPickerOpen(true);
+  };
+  // const handleChange = React.useCallback((e) => onChange(e.target.value), [
+  //   onChange,
+  // ]);
 
   return (
     <div className="wrap-labelinput">
       <label htmlFor="color">Color</label>
-      <div
-        className="color-trigger"
-        onClick={() => setColorPickerOpen(!colorPickerOpen)}
-      >
+      <div className="color-trigger" onClick={handleClick}>
         {color ? (
           <p className="hex-text" style={{ color: uppercolor }}>
             {color.toUpperCase()}
@@ -49,13 +64,19 @@ export default function ColorInput(props) {
           </p>
         )}
         {colorPickerOpen && (
-          <motion.div style={{ marginTop: "20px" }}>
+          <motion.div
+            style={{ marginTop: "20px" }}
+            // className="colorpickeroverlay"
+            onClick={handleClick}
+          >
             <SketchPicker
-              // [1] onChangeComplete={handleColorChange}
-              onChangeComplete={(color) => {
-                setColor(color.hex);
-                // , startRender(true);
-              }}
+              className={"sketchpicker"}
+              color={color}
+              onClick={handleKeepOpen}
+              onChange={handleChange}
+              // onChangeComplete={(color) => {
+              //   setColor(color.hex);
+              // }}
             />
           </motion.div>
         )}

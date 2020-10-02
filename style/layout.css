@@ -6,9 +6,11 @@
 :root {
   --main-bg-color: #17181b;
   /* --main-bg-color: #1e1f23; */
-  --accent-pink: #f35c98;
-  --accent-softerpink: #ef8db4;
-  --accent-softestpink: #ecaec7;
+  --accent-pink: #c81c60;
+  --accent-softerpink: #b93a6c;
+  --accent-softestpink: #b95f82;
+  /* --accent-softerpink: #ef8db4;
+  --accent-softestpink: #ecaec7; */
   --accent-2-orange: #f99576;
   --accent-3-yellow: #fcca49;
 }
@@ -168,7 +170,8 @@ footer a {
 }
 
 a {
-  color: #e2b0c4;
+  /* color: #e2b0c4; */
+  color: #c5819c;
   text-decoration: underline;
 }
 
@@ -182,6 +185,7 @@ a {
   color: #828282;
   font-size: 12px;
   margin-top: 0px;
+  text-align: center;
 }
 
 .title,
@@ -228,7 +232,7 @@ label {
   font-weight: 400;
   font-family: "Inter", serif;
   color: var(--Subtext, #dedede);
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0px;
   line-height: 1.2;
   font-style: normal;
@@ -237,7 +241,7 @@ input[type="number"],
 select {
   width: 80px;
   padding: 5px;
-  margin: 5px 0px 5px 15px;
+  margin: 5px 0px 5px 5px;
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
@@ -414,7 +418,7 @@ select {
 .headerblank {
   color: "white";
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 400;
   margin-top: 4rem;
 }
 
@@ -504,25 +508,25 @@ input[type="checkbox"] {
 
 .wrapper-label {
   background: var(--accent-pink);
-  border-radius: 7px;
-  border: 3px solid var(--main-bg-color);
-  width: 55px;
+  border-radius: 4px;
+  border: 2px solid var(--main-bg-color);
+  width: 26px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   float: right;
-  left: 219px;
-  bottom: -18px;
+  left: -33px;
+  bottom: -13px;
 }
 
 .beta-text {
   font-family: "Kufam", serif;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 6px;
   letter-spacing: 0px;
-  padding: 2px;
-  padding-top: 5px;
+  padding: 1px;
+  padding-top: 2px;
   margin: 0px;
   line-height: 1.2;
   font-weight: 600;
@@ -544,7 +548,7 @@ input[type="checkbox"] {
 }
 
 .toast-svg {
-  background: #f35c98;
+  background: #c81c60;
   width: 40px;
   height: 100%;
   border-radius: 5px 0px 0px 5px;
@@ -577,6 +581,14 @@ input[type="checkbox"] {
   position: absolute !important;
 }
 
+.colorpickeroverlay {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
 /* 1. FORMS */
 .unit {
   position: relative;
@@ -594,11 +606,12 @@ input[type="checkbox"] {
   border-radius: 5px;
   padding: 20px 20px;
   align-items: start;
-  justify-content: start;
+  justify-content: center;
 }
 
 .transition {
   max-width: unset;
+  height: 230px;
 }
 .style-background {
   background: #141518;
@@ -641,7 +654,7 @@ input[type="checkbox"] {
 }
 
 .yarnnpm {
-  font-family: "Kufam", serif;
+  font-family: "Source Sans Pro", serif;
   margin-right: 40px;
   padding-top: 5px;
 }
@@ -680,7 +693,7 @@ input[type="checkbox"] {
 
 @media (max-width: 1024px) {
   .container-left {
-    padding: 3rem 2rem;
+    padding: 3rem 1rem;
     margin-bottom: 20vw;
     width: 100%;
     margin-right: 0vw;
@@ -716,6 +729,15 @@ input[type="checkbox"] {
 /* Up to Tablets */
 
 @media (max-width: 768px) {
+  .configure-section {
+    padding: 20px 0px;
+  }
+  .wrap-configure-form {
+    flex-direction: row;
+  }
+  .style-background {
+    margin-right: 1rem;
+  }
 }
 
 @media (min-width: 1300px) {
@@ -729,12 +751,6 @@ input[type="checkbox"] {
 @media (max-width: 524px) {
   .configure-section {
     width: min-content;
-  }
-}
-
-@media (max-width: 1024px) {
-  .wrapper-label {
-    left: 163px;
   }
 }
 
@@ -757,13 +773,8 @@ input[type="checkbox"] {
   }
 
   .wrapper-label {
-    width: 45px;
-    left: 122px;
-    bottom: -13px;
-  }
-  .beta-text {
-    font-size: 12px;
-    padding-top: 5px;
+    left: -23px;
+    bottom: -1px;
   }
   li {
     font-size: 12px;
@@ -795,9 +806,26 @@ input[type="checkbox"] {
   .installation-text {
     font-size: 12px;
   }
+  label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  label {
+    font-size: 12px;
+  }
+
+  .wrap-labelinput {
+    min-width: 180px;
+  }
 }
 
 .hlbyaM {
   background: transparent !important;
   border-radius: 5px !important;
+}
+
+.sketchpicker {
+  z-index: 999 !important;
 }
