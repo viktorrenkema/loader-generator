@@ -8,6 +8,7 @@ import { generateCodeSnippet } from "../lib/generateCodeSnippet";
 
 export default function ConfigureSection(props) {
   const {
+    code,
     quantity,
     radius,
     margin,
@@ -121,23 +122,27 @@ export default function ConfigureSection(props) {
       <motion.div className="snippet">
         <CodeBlock
           showLineNumbers={true}
-          text={generateCodeSnippet({
-            delay,
-            radius,
-            margin,
-            duration,
-            width,
-            height,
-            color,
-            opacity,
-            scaleMin,
-            scaleMax,
-            ease,
-            rotation,
-            quantity,
-            repeatType,
-            setRepeatType,
-          })}
+          text={
+            code
+              ? generateCodeSnippet({
+                  delay,
+                  radius,
+                  margin,
+                  duration,
+                  width,
+                  height,
+                  color,
+                  opacity,
+                  scaleMin,
+                  scaleMax,
+                  ease,
+                  rotation,
+                  quantity,
+                  repeatType,
+                  setRepeatType,
+                })
+              : "Code generation is not yet supported."
+          }
         ></CodeBlock>
       </motion.div>
     </motion.div>

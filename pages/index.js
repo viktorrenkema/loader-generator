@@ -36,31 +36,27 @@ export default function Home(props) {
           <title>Loader generator</title>
           <meta
             name="description"
-            content="Create your own Loaders and generate production-ready code to use in your React apps."
+            content="Create your own animated Loaders and generate production-ready code to use in your React apps."
           />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content="@vrenkema" />
           <meta
             name="twitter:title"
-            content="Small Island Developing States Photo Submission"
+            content="A Loader component generator for React."
           />
           <meta
             name="twitter:description"
-            content="View the album on Flickr."
+            content="Create your own animated Loaders and generate production-ready code to use in your React apps."
           />
           <meta
             name="twitter:image"
             content="https://i.ibb.co/cxJwZKN/loadercard.png"
           />
           <meta
-            property="twitter:description"
-            content="Create your own Loaders with custom easings and bring the generated code into production right away."
-          />
-          <meta
             property="og:image"
             content="https://i.ibb.co/cxJwZKN/loadercard.png"
           />
-          <meta property="og:url" content="http://renkema.com" />
+          <meta property="og:url" content="http://loaders.io" />
           {
             <link
               rel="icon"
@@ -72,6 +68,17 @@ export default function Home(props) {
         <BetaLabel></BetaLabel>
         <h1 className="title">Loader generator</h1>
 
+        <p className="madeby">
+          Built by{" "}
+          <a
+            href="https://www.renkema.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Viktor
+          </a>
+          , powered by Framer Motion and Vercel.
+        </p>
         <p className="description">
           Customize your loader, install Motion in your React app, and
           copy-paste the generated code.
@@ -91,7 +98,7 @@ export default function Home(props) {
                     height: "2px",
                     width: "100%",
                     background:
-                      "linear-gradient(90deg, #F35C98 0%, #F78182 100%)",
+                      "linear-gradient(90deg, #f35c98 0%, #ef8db4 100%)",
                   }}
                 ></motion.div>
               )}
@@ -123,7 +130,9 @@ export default function Home(props) {
                     height: "2px",
                     width: "100%",
                     background:
-                      "linear-gradient(90deg, #FAA768 0%, #FCCA49 100%)",
+                      "linear-gradient(90deg, #ef8db4 0%, #ecaec7 100%)",
+                    // background:
+                    //   "linear-gradient(90deg, #FAA768 0%, #FCCA49 100%)",
                   }}
                 ></motion.div>
               )}
@@ -136,6 +145,7 @@ export default function Home(props) {
         <div className="wrapper-content">
           {tab == 1 && (
             <ConfigureSection
+              code={true}
               color={color}
               setColor={setColor}
               quantity={quantity}
@@ -174,7 +184,7 @@ export default function Home(props) {
           )}
 
           {tab == 3 && (
-            <div>
+            <div style={{ width: "100%" }}>
               <div className="toast">
                 <div className="toast-svg">
                   <ExclamationMark></ExclamationMark>
@@ -182,13 +192,13 @@ export default function Home(props) {
                 <div className="toast-text">
                   <p className="toast-h1">Heads up!</p>
                   <p className="toast-h2">
-                    Experimental is under development and only meant as a
-                    playground to explore funky animations. No code is
-                    generated.
+                    Experimental is only meant as a playground to explore funky
+                    animations. No code is generated.
                   </p>
                 </div>
               </div>
               <ConfigureSection
+                code={false}
                 color={color}
                 setColor={setColor}
                 quantity={quantity}
