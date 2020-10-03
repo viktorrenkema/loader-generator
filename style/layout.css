@@ -728,6 +728,9 @@ input[type="checkbox"] {
 /* Up to Tablets */
 
 @media (max-width: 768px) {
+  .toast-wrapper {
+    width: 100%;
+  }
   .configure-section {
     padding: 20px 0px;
   }

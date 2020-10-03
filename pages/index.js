@@ -193,7 +193,7 @@ export default function Home(props) {
           )}
 
           {tab == 3 && (
-            <div style={{ width: "100%" }}>
+            <div className="toast-wrapper">
               <div className="toast">
                 <div className="toast-svg">
                   <ExclamationMark></ExclamationMark>
