@@ -56,18 +56,18 @@ export default function Home(props) {
           />
           <meta
             name="twitter:image"
-            content="https://i.ibb.co/cxJwZKN/loadercard.png"
+            content="https://i.ibb.co/FW2nKdd/card.png"
           />
           <meta
             property="og:image"
-            content="https://i.ibb.co/cxJwZKN/loadercard.png"
+            content="https://i.ibb.co/FW2nKdd/card.png"
           />
           <meta property="og:url" content="http://loaders.io" />
           {
             <link
               rel="icon"
               type="image/png"
-              href="https://i.ibb.co/LzQpxdL/loader-fav.png"
+              href="https://i.ibb.co/KszqgR3/Fav-2x.png"
             />
           }
         </Head>
