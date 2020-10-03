@@ -67,7 +67,7 @@ export default function Home(props) {
             <link
               rel="icon"
               type="image/png"
-              href="https://i.ibb.co/B2pQvPh/Fav-2x.png"
+              href="https://i.ibb.co/0q08g6Z/Fav.png"
             />
           }
         </Head>
