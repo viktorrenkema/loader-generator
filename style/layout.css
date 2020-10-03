@@ -194,7 +194,7 @@ a {
 }
 
 .description {
-  width: 50%;
+  width: 480px;
   overflow: hidden;
   font-family: "Source Sans Pro", serif;
   color: var(--Subtext, #eaeaea);
