@@ -848,3 +848,7 @@ input[type="checkbox"] {
     height: unset;
   }
 }
+
+.eFgZBg {
+  background: transparent !important;
+}
