@@ -101,13 +101,23 @@ export default function ConfigureSection(props) {
           <a href="https://www.framer.com/motion/" target="_blank">
             Framer Motion
           </a>
-          , an open-source production-ready animation library for React.
-          <br></br>
-          <br></br>Simply install the{" "}
+          , an open-source production-ready animation library for React. Install
+          the{" "}
           <a href="https://www.npmjs.com/package/framer-motion" target="_blank">
             npm package
           </a>{" "}
-          into your React app and bring your Loader into your project:
+          into your React app and bring your Loader into your project.
+          <br></br>
+          <br></br>
+          All it takes is a React environment with Framer Motion 2.5.0 and up,
+          or{" "}
+          <a
+            target="_blank"
+            href="https://codesandbox.io/s/loadersio-template-0y2r5?file=/src/App.js"
+          >
+            fork this Codesandbox
+          </a>{" "}
+          and try it out right away.
         </p>
         <br></br>
         <TerminalCommand

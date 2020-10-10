@@ -361,6 +361,7 @@ input[type="number"] {
   color: var(--Subtext, #dedede);
   font-size: 14px;
   line-height: 1.6;
+  margin-bottom: 0em;
   font-weight: 400;
 }
 
