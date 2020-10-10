@@ -83,7 +83,7 @@ export default function Home(props) {
           >
             Viktor Renkema
           </a>
-          , powered by Framer Motion and Vercel.
+          , powered by Framer Motion and Next.js.
         </p>
         <p className="description">
           Customize your loader, install Motion in your React app, and
